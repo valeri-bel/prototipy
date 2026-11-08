@@ -90,6 +90,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .photo { display: grid; place-items: center; text-align: center; padding: 28px; font-size: 14px; line-height: 1.45; border: 1px dashed currentColor; }
 .portrait .photo { position: relative; width: 58%; aspect-ratio: 4 / 5; border-radius: 200px 200px 12px 12px; background: var(--night-2); color: var(--on-night-muted); }
 
+.portrait .photo--real { padding: 0; border: 0; overflow: hidden; }
+.photo--real img { position: absolute; left: -22.8%; top: -28%; width: 130%; max-width: none; height: auto; }
+
 /* Плашка «Нужно от вас» */
 .need { display: inline-block; padding: 7px 13px; border: 1px dashed var(--blush-deep); border-radius: 8px; color: #8b4f37; font-size: 14px; font-weight: 600; line-height: 1.4; }
 .section--night .need, .hero .need { color: var(--blush); border-color: var(--blush); }

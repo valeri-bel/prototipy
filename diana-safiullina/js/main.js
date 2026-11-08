@@ -77,7 +77,7 @@
       document.getElementById("result-text").textContent = t(res.text);
       var go = document.getElementById("result-go");
       go.dataset.format = res.format;
-      go.dataset.city = answers.place === "alm" ? "Альметьевск" : answers.place === "ufa" ? "Уфа" : "Другой город";
+      go.dataset.city = answers.place === "alm" ? "Альметьевск" : answers.place === "kzn" ? "Казань" : "Другой город";
     });
   }
 
