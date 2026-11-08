@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>РеБэттери&nbsp;— анализ и&nbsp;предложение по&nbsp;сайту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Роли цветов постоянные, значения — под клиента: акцент из логотипа или обложки группы */
+:root{
+  --sage:#0E8A9A; --sage-dark:#0B2A45; --sage-ink:#0B5D6B; --gold:#D79A12; --mint:#FFC83D;
+  --bg:#F7FAFC; --paper:#fff; --ink:#10263A; --muted:#55708A; --line:#D8E3EA; --tint:#E6F3F6; --warn:#FFF7E6;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 Manrope,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+h1{font-size:46px;margin-bottom:16px}
+h2{font-size:32px;margin:0 0 6px}
+h3{font-size:22px;margin:0 0 6px}
+p{margin:11px 0}
+.sub{color:var(--muted);font-size:14.5px}
+p.sub{max-width:72ch}
+header{background:var(--sage-dark);color:#fff;padding:56px 0 48px}
+header .eyebrow{letter-spacing:3.4px;text-transform:uppercase;font-size:12px;color:var(--mint);margin-bottom:18px}
+header h1{color:#fff;max-width:24ch}
+header p{color:#E4E9E1;max-width:64ch}
+header .sub{color:#AEB9AE;margin-top:20px}
+header a{color:#E4E9E1}
+section{padding:46px 0 6px}
+.sec-num{display:block;width:max-content;font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--sage);border-bottom:2px solid var(--sage);padding-bottom:5px;margin-bottom:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin:14px 0}
+.card .n{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--sage);line-height:1;margin-bottom:6px}
+.grid.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid.two{grid-template-columns:1fr} h1{font-size:36px}}
+.adv{list-style:none;padding:0;margin:14px 0}
+.adv li{padding:11px 0 11px 26px;border-bottom:1px solid var(--line);position:relative}
+.adv li:before{content:"";position:absolute;left:4px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.adv li:last-child{border:0}
+.why{background:var(--tint);border-left:3px solid var(--sage);border-radius:0 9px 9px 0;padding:11px 16px;margin-top:12px;font-size:15.5px}
+.seg{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:18px 22px;margin:12px 0}
+.tag{display:inline-block;background:var(--tint);color:var(--sage-ink);font-size:12.5px;letter-spacing:.4px;padding:3px 11px;border-radius:999px;margin-bottom:8px}
+.src{color:var(--muted);font-size:14px;margin-top:2px}
+.note{background:var(--warn);border-radius:12px;padding:16px 20px;margin:18px 0;font-size:15.5px}
+.note strong{color:#7A5A22}
+ol.tasks{padding-left:22px}
+ol.tasks li{margin:12px 0}
+.cta{background:var(--sage-dark);color:#fff;border-radius:16px;padding:34px;text-align:center;margin:22px 0}
+.cta h3{color:#fff;font-size:28px}
+.cta a.btn{display:inline-block;background:var(--mint);color:var(--sage-dark);padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:700;margin-top:14px}
+.cta .url{display:block;margin-top:13px;color:#D6DED4;font-size:15px;word-break:break-all}
+.cta p{color:#DCE3DA;max-width:56ch;margin:0 auto}
+.offer{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin:14px 0}
+.offer-main{border:2px solid var(--sage);background:#F4FBFC}
+.badge{display:inline-block;background:var(--sage);color:#fff;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;padding:3px 11px;border-radius:6px;margin-bottom:9px}
+blockquote{margin:14px 0;padding:14px 20px;background:var(--paper);border-left:3px solid var(--gold);border-radius:0 9px 9px 0;font-style:italic;color:#353B36}
+footer{margin-top:56px;padding:30px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer p{max-width:70ch}
+footer a{color:var(--sage-dark)}
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  .wrap{max-width:100%;padding:0 14mm}
+  header{padding:16mm 0 11mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{padding:7mm 0 0}
+  h2{margin-top:2mm}
+  .adv li{padding:7px 0 7px 24px}
+  p{margin:8px 0}
+  .card,.seg,.offer,.cta,.note,.why,blockquote{page-break-inside:avoid;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2,h3,.sec-num{page-break-after:avoid;break-after:avoid}
+  .card,.seg,.offer{padding:16px 20px;margin:10px 0}
+  .why{margin-top:9px;padding:9px 14px}
+  .cta{padding:24px;margin:16px 0}
+  footer{margin-top:28px;padding:18px 0 20px}
+  h1{font-size:28pt}h2{font-size:20pt}h3{font-size:14pt}
+  a{color:inherit;text-decoration:none}
+  @page{margin:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Анализ и&nbsp;предложение · Валерия Белецкая</div>
+    <h1>РеБэттери: разбор сайта, конкурентов и&nbsp;предложение по&nbsp;сайту</h1>
+    <p>Здравствуйте! Перед&nbsp;тем&nbsp;как&nbsp;что-то предлагать, я&nbsp;разобрала ваш&nbsp;сайт, карточки на&nbsp;Яндекс Картах и&nbsp;в&nbsp;2ГИС, прочитала 50 из&nbsp;178 отзывов и&nbsp;посмотрела шесть конкурентов по&nbsp;Москве и&nbsp;области: четыре сети и&nbsp;две выездные службы. Ниже то,&nbsp;что&nbsp;я&nbsp;увидела и&nbsp;что&nbsp;предлагаю сделать.</p>
+    <p class="sub">Источники: <a href="https://ребэттери.рф/">ребэттери.рф</a>, Яндекс Карты, 2ГИС, сайты конкурентов, каталог auto2.info. Данные собраны 8 ноября 2026 года.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <span class="sec-num">01 · Главные выводы</span>
+  <h2>Пять вещей, которые я&nbsp;увидела</h2>
+  <div class="card">
+    <div class="n">1</div>
+    <h3>Сети подбирают аккумулятор по&nbsp;марке машины, у&nbsp;вас пока нет</h3>
+    <p>У&nbsp;АКБ.ру, АКБМАГ, AKBMoscow и&nbsp;CarAkb на&nbsp;сайте есть подбор: марка, модель, дальше подходящие батареи. У&nbsp;вас на&nbsp;главной написано «Пока автоматического подбора нет», а&nbsp;легковых аккумуляторов 1343, это&nbsp;68 страниц каталога. Человеку с&nbsp;севшей батареей приходится самому разбираться в&nbsp;полярности и&nbsp;габаритах или&nbsp;звонить.</p>
+  </div>
+  <div class="card">
+    <div class="n">2</div>
+    <h3>Помощь на&nbsp;дороге есть, но&nbsp;её&nbsp;нельзя быстро заказать</h3>
+    <p>На&nbsp;сайте перечислено 10 видов помощи, при&nbsp;этом нет&nbsp;цены, зоны выезда и&nbsp;времени приезда, а&nbsp;кнопка ведёт на&nbsp;страницу контактов. Выездные службы пишут это&nbsp;сразу: Autobooster работает круглосуточно и&nbsp;обещает приехать за&nbsp;20 минут, «Вызов мастера» называет от&nbsp;2&nbsp;500&nbsp;₽ за&nbsp;замену и&nbsp;5–20 минут по&nbsp;Москве.</p>
+  </div>
+  <div class="card">
+    <div class="n">3</div>
+    <h3>Цены на&nbsp;услуги видны на&nbsp;Яндекс Картах, а&nbsp;на&nbsp;сайте их&nbsp;нет</h3>
+    <p>На&nbsp;картах указано: диагностика бесплатно, зарядка 500&nbsp;₽, восстановление 800&nbsp;₽, прикурить или&nbsp;заменить 2&nbsp;500&nbsp;₽. На&nbsp;сайте ни&nbsp;одной из&nbsp;этих цифр, а&nbsp;про&nbsp;доставку сказано, что&nbsp;условия «подтверждаются при&nbsp;оформлении заказа». У&nbsp;АКБМАГ и&nbsp;AKBMoscow доставка по&nbsp;Москве названа сразу: 300&nbsp;₽.</p>
+  </div>
+  <div class="card">
+    <div class="n">4</div>
+    <h3>Лучшее, что&nbsp;о&nbsp;вас говорят, на&nbsp;сайт не&nbsp;попало</h3>
+    <p>На&nbsp;Яндекс Картах у&nbsp;вас 5,0 при&nbsp;193 оценках и&nbsp;178 отзывах, в&nbsp;2ГИС 5 при&nbsp;142 оценках. На&nbsp;сайте нет&nbsp;ни&nbsp;одного отзыва, а&nbsp;у&nbsp;товаров стоят пустые звёзды. Я&nbsp;прочитала 50 отзывов: в&nbsp;8 мастер приехал к&nbsp;клиенту, в&nbsp;5 выручил подменный аккумулятор. Именно этого на&nbsp;сайте и&nbsp;не&nbsp;видно.</p>
+  </div>
+  <div class="card">
+    <div class="n">5</div>
+    <h3>На&nbsp;сайте остались следы шаблона и&nbsp;разночтения</h3>
+    <p>Вкладка браузера называется «Мой&nbsp;магазин». В&nbsp;блоге лежат шаблонные записи 2016–2017 годов с&nbsp;тегами «тег 1». В&nbsp;шапке один телефон, в&nbsp;подвале другой. По&nbsp;сайту понедельник выходной, а&nbsp;2ГИС обещает открытие в&nbsp;понедельник в&nbsp;10:00. Один клиент в&nbsp;отзыве прямо пишет, что&nbsp;не&nbsp;надо смотреть на&nbsp;указанный распорядок.</p>
+  </div>
+</section>
+
+<section>
+  <span class="sec-num">02 · Ваши преимущества</span>
+  <h2>Что&nbsp;у&nbsp;вас уже&nbsp;сильного</h2>
+  <p class="sub">Это&nbsp;не&nbsp;мои придумки: всё взято с&nbsp;вашего сайта, из&nbsp;карточки на&nbsp;Яндекс Картах и&nbsp;из&nbsp;отзывов ваших клиентов.</p>
+  <ul class="adv">
+    <li><b>Вы&nbsp;не&nbsp;торопитесь продать новое.</b> «Сначала восстанавливаем, и&nbsp;только потом предлагаем замену.» На&nbsp;страницах конкурентов, которые я&nbsp;открывала, такого обещания я&nbsp;не&nbsp;нашла.</li>
+    <li><b>Подменный аккумулятор.</b> «Ребята сами приезжают, привозят новые аккумуляторы (на&nbsp;выбор) и&nbsp;подменный» (Дмитрий К.,&nbsp;26 апреля 2026). Подменный упомянут в&nbsp;5 отзывах из&nbsp;50 прочитанных.</li>
+    <li><b>Бесплатная диагностика.</b> «Тестировали наш&nbsp;старый АКБ, денег не&nbsp;взяли» (Елена К.,&nbsp;17 сентября 2026).</li>
+    <li><b>Мастер приезжает с&nbsp;батареей.</b> «Через&nbsp;20 минут привезли и&nbsp;поменяли аккумулятор (установка под&nbsp;водительским сиденьем!!!)» (Ольга М., 30 июля 2025).</li>
+    <li><b>Большой каталог.</b> 3&nbsp;747 товаров, из&nbsp;них 1343 легковых аккумулятора, 162 мото, 160 для&nbsp;ИБП и&nbsp;тяговых.</li>
+    <li><b>Бренды, которые ищут.</b> VARTA, Banner, EXIDE, MUTLU, TOPLA, Hyundai. Клиент пишет, что&nbsp;«тут можно купить original Varta» (Михаил Кр, 9 июня 2026).</li>
+    <li><b>Выгода за&nbsp;старый аккумулятор.</b> Скидка при&nbsp;покупке нового, скупка «до&nbsp;5000 руб», вывоз. В&nbsp;7 отзывах из&nbsp;50 вспоминают скидку или&nbsp;маленькую доплату.</li>
+    <li><b>Не&nbsp;только автомобили.</b> Зарядка и&nbsp;восстановление AGM, гелевых, мото, литиевых, разблокировка литиевых аккумуляторов.</li>
+    <li><b>Удобно приехать.</b> Парковку хвалят в&nbsp;10 отзывах из&nbsp;50, на&nbsp;Яндекс Картах по&nbsp;этому пункту 100% положительных.</li>
+    <li><b>Людей помнят по&nbsp;именам.</b> В&nbsp;отзывах благодарят Владимира и&nbsp;Артура. Персонал на&nbsp;картах оценён на&nbsp;96% положительно по&nbsp;88 отзывам.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="sec-num">03 · Сейчас</span>
+  <h2>Что&nbsp;работает и&nbsp;что&nbsp;провисает</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>Работает</h3>
+      <ul class="adv">
+        <li>Сайт уже&nbsp;есть, с&nbsp;корзиной, фильтрами и&nbsp;вашим фирменным цветом</li>
+        <li>Понятная идея на&nbsp;первом экране</li>
+        <li>Рейтинг 5,0 на&nbsp;Яндекс Картах и&nbsp;5 в&nbsp;2ГИС</li>
+        <li>Цены и&nbsp;наличие у&nbsp;товаров</li>
+        <li>WhatsApp, Telegram, Viber и&nbsp;Max для&nbsp;связи</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Провисает</h3>
+      <ul class="adv">
+        <li>Сайт продаёт товары, а&nbsp;ваша сила в&nbsp;услугах</li>
+        <li>Нет&nbsp;подбора по&nbsp;марке машины</li>
+        <li>Нет&nbsp;цен на&nbsp;услуги, доставку и&nbsp;выезд</li>
+        <li>Нет&nbsp;отзывов, гарантии и&nbsp;зоны выезда</li>
+        <li>В&nbsp;разделе «Легковые» первыми идут батареи на&nbsp;100–200 А·ч, в&nbsp;том числе с&nbsp;грузовой полярностью</li>
+        <li>На&nbsp;картах данные устарели: Varta AGM 95 Ач за&nbsp;5&nbsp;200&nbsp;₽, хотя на&nbsp;сайте AGM 60 Ач стоит 21&nbsp;500&nbsp;₽</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="sec-num">04 · Конкуренты</span>
+  <h2>Кто ещё&nbsp;меняет аккумуляторы в&nbsp;Москве и&nbsp;области</h2>
+  <p>Я&nbsp;посмотрела крупные сети и&nbsp;выездные службы как&nbsp;обычный покупатель: что&nbsp;есть на&nbsp;сайте, сколько стоит, куда&nbsp;приедут. Оценки взяты из&nbsp;каталога auto2.info, сведения об&nbsp;условиях с&nbsp;сайтов компаний, всё на&nbsp;8 ноября 2026 года.</p>
+
+  <div class="card">
+    <span class="tag">сеть · 29 адресов на&nbsp;сайте</span>
+    <h3>АКБ.ру</h3>
+    <p class="src">akb.ru · 5 при&nbsp;840 оценках</p>
+    <p>Адреса в&nbsp;Москве и&nbsp;области: Балашиха, Химки, Подольск, Одинцово, Королёв и&nbsp;другие. Подбор по&nbsp;марке, установка от&nbsp;300&nbsp;₽, сложная до&nbsp;4&nbsp;500&nbsp;₽, замена курьером на&nbsp;месте. Магазин у&nbsp;Сокольников работает круглосуточно.</p>
+    <div class="why">По&nbsp;числу точек с&nbsp;сетью не&nbsp;спорим. Спорим тем,&nbsp;чего в&nbsp;её&nbsp;продаже не&nbsp;видно: сначала проверить и&nbsp;спасти батарею.</div>
+  </div>
+  <div class="card">
+    <span class="tag">сеть · 7 пунктов в&nbsp;Москве</span>
+    <h3>АКБМАГ</h3>
+    <p class="src">akbmag.ru · 4,99 при&nbsp;1009 оценках</p>
+    <p>Подбор по&nbsp;марке, установка 200–2&nbsp;500&nbsp;₽ с&nbsp;понятной таблицей по&nbsp;сложности, доставка 300&nbsp;₽, срочная от&nbsp;50 минут за&nbsp;500&nbsp;₽, за&nbsp;МКАД плюс 30&nbsp;₽ за&nbsp;км. За&nbsp;старый скидка до&nbsp;2&nbsp;800&nbsp;₽.</p>
+    <div class="why">Это&nbsp;образец прозрачности. У&nbsp;вас за&nbsp;старый заявлено до&nbsp;5&nbsp;000&nbsp;₽, и&nbsp;эту цифру стоит показать так&nbsp;же открыто, подтвердив условия.</div>
+  </div>
+  <div class="card">
+    <span class="tag">сеть · 2 в&nbsp;Москве, 3 в&nbsp;области</span>
+    <h3>AKBMoscow</h3>
+    <p class="src">akbmoscow.ru · 4,99 при&nbsp;2190 оценках</p>
+    <p>Подбор по&nbsp;марке, две цены у&nbsp;товара, при&nbsp;обмене и&nbsp;без&nbsp;него (8&nbsp;400 и&nbsp;8&nbsp;900&nbsp;₽ за&nbsp;TAB Polar 60). Доставка 300&nbsp;₽, экспресс за&nbsp;3 часа 1&nbsp;000&nbsp;₽. Скидка до&nbsp;3&nbsp;500&nbsp;₽. На&nbsp;сайте заявляют 12 лет работы.</p>
+    <div class="why">Две цены сразу снимают вопрос о&nbsp;старом аккумуляторе. Логику стоит взять, цифры у&nbsp;вас свои.</div>
+  </div>
+  <div class="card">
+    <span class="tag">сеть · 4 адреса в&nbsp;Москве</span>
+    <h3>CarAkb</h3>
+    <p class="src">carakb.ru · 5 при&nbsp;1397 оценках</p>
+    <p>Подбор по&nbsp;авто и&nbsp;параметрам, выезд мастера по&nbsp;Москве 300&nbsp;₽, за&nbsp;МКАД плюс 30&nbsp;₽ за&nbsp;км, бесплатная диагностика при&nbsp;выезде, заявка на&nbsp;установку прямо на&nbsp;странице. Работают с&nbsp;9:00 до&nbsp;21:00.</p>
+    <div class="why">Самый близкий к&nbsp;вам по&nbsp;услугам. Разница в&nbsp;том, что&nbsp;вы&nbsp;делаете восстановление и&nbsp;даёте подменный, и&nbsp;это&nbsp;надо вынести на&nbsp;первый план.</div>
+  </div>
+  <div class="card">
+    <span class="tag">выезд · круглосуточно</span>
+    <h3>Autobooster</h3>
+    <p class="src">autobooster.ru</p>
+    <p>Москва и&nbsp;область, приезд за&nbsp;20 минут. Замена от&nbsp;2&nbsp;000&nbsp;₽ в&nbsp;одном блоке и&nbsp;от&nbsp;4&nbsp;000&nbsp;₽ в&nbsp;другом, прикурить от&nbsp;1&nbsp;500&nbsp;₽ и&nbsp;от&nbsp;3&nbsp;000&nbsp;₽. Каталога аккумуляторов нет.</p>
+    <div class="why">Сильны срочностью, а&nbsp;цены у&nbsp;них противоречат друг другу. Ваша чёткая цена и&nbsp;каталог с&nbsp;наличием будут выглядеть надёжнее.</div>
+  </div>
+  <div class="card">
+    <span class="tag">выезд · круглосуточно</span>
+    <h3>Вызов мастера</h3>
+    <p class="src">vyzov-mastera.msk.ru</p>
+    <p>Москва и&nbsp;область до&nbsp;100 км, 5–20 минут по&nbsp;Москве, замена от&nbsp;2&nbsp;500&nbsp;₽, прикурить от&nbsp;1&nbsp;200&nbsp;₽, 50&nbsp;₽ за&nbsp;км за&nbsp;МКАД. Каталога аккумуляторов нет.</p>
+    <div class="why">Ваши 2&nbsp;500&nbsp;₽ стоят на&nbsp;том&nbsp;же уровне, но&nbsp;у&nbsp;вас батарею можно выбрать заранее и&nbsp;увидеть её&nbsp;цену.</div>
+  </div>
+  <div class="note"><strong>Кто на&nbsp;самом деле забирает поиск.</strong> На&nbsp;запрос о&nbsp;замене аккумулятора с&nbsp;выездом по&nbsp;Москве я&nbsp;видела сервисы с&nbsp;отдельной страницей под&nbsp;услугу: цена, время приезда, кнопка вызова. Вашего сайта в&nbsp;этой&nbsp;выдаче не&nbsp;было. Проверяла общим поиском, это&nbsp;не&nbsp;замер позиций в&nbsp;Яндексе, но&nbsp;отдельной страницы под&nbsp;такую услугу у&nbsp;вас сейчас и&nbsp;нет.</div>
+</section>
+
+<section>
+  <span class="sec-num">05 · Покупатели</span>
+  <h2>Кто к&nbsp;вам приходит</h2>
+  <p class="sub">Выводы по&nbsp;50 отзывам на&nbsp;Яндекс Картах и&nbsp;по&nbsp;вашему каталогу.</p>
+  <div class="seg"><span class="tag">срочно</span><h3>1. Машина не&nbsp;заводится</h3><p>«АКБ умер». Вопрос к&nbsp;сайту: приедете&nbsp;ли ко&nbsp;мне, когда&nbsp;и&nbsp;сколько это&nbsp;будет стоить.</p></div>
+  <div class="seg"><span class="tag">хочет сэкономить</span><h3>2. Хочет спасти старую батарею</h3><p>«Новый покупать не&nbsp;пришлось». Вопрос: можно&nbsp;ли восстановить, сколько стоит и&nbsp;на&nbsp;чём ездить, пока она&nbsp;у&nbsp;вас.</p></div>
+  <div class="seg"><span class="tag">подбор</span><h3>3. Выбирает новый аккумулятор</h3><p>Вопрос: какой подойдёт именно на&nbsp;мою машину и&nbsp;есть&nbsp;ли он&nbsp;сейчас. Здесь нужен подбор по&nbsp;марке.</p></div>
+  <div class="seg"><span class="tag">выгода</span><h3>4. Сдаёт старый</h3><p>Вопрос: сколько дадут. Цена приёма стала поводом для&nbsp;одной из&nbsp;трёх жалоб в&nbsp;прочитанных отзывах.</p></div>
+  <div class="seg"><span class="tag">другая техника</span><h3>5. Мото, самокаты, ИБП, лодки</h3><p>Вопрос: есть&nbsp;ли батарея под&nbsp;мою технику. В&nbsp;каталоге 162 мото и&nbsp;160 позиций для&nbsp;ИБП и&nbsp;тяговых, включая батареи Kugoo.</p></div>
+  <div class="seg"><span class="tag">безнал</span><h3>6. Грузовые и&nbsp;организации</h3><p>Вопрос: работаете&nbsp;ли по&nbsp;безналу и&nbsp;приедете&nbsp;ли к&nbsp;грузовику. Оплата банковским переводом указана на&nbsp;картах, помощь грузовым и&nbsp;спецтехнике есть на&nbsp;сайте.</p></div>
+</section>
+
+<section>
+  <span class="sec-num">06 · Логика сайта</span>
+  <h2>Что&nbsp;должен решать сайт</h2>
+  <ol class="tasks">
+    <li><b>Разводить людей по&nbsp;ситуации.</b> Первый вопрос на&nbsp;сайте: что&nbsp;с&nbsp;аккумулятором. Не&nbsp;заводится, садится, нужен новый, хочу сдать старый. У&nbsp;каждого свой короткий путь.</li>
+    <li><b>Принимать срочный вызов.</b> Заявка в&nbsp;одну форму и&nbsp;кнопка звонка, зона выезда и&nbsp;время приезда сразу на&nbsp;виду.</li>
+    <li><b>Отвечать на&nbsp;вопрос цены.</b> Цены услуг открыто, а&nbsp;в&nbsp;карточке итог с&nbsp;установкой, приездом и&nbsp;скидкой за&nbsp;старый ещё&nbsp;до&nbsp;заказа.</li>
+    <li><b>Подбирать по&nbsp;машине.</b> Марка и&nbsp;модель вместо 68 страниц каталога.</li>
+    <li><b>Продавать вашу идею.</b> Показать путь: проверили, зарядили или&nbsp;восстановили, дали подменный, новый только если&nbsp;нужен.</li>
+    <li><b>Вызывать доверие и&nbsp;забирать поиск.</b> Живые отзывы, один телефон, точный график и&nbsp;отдельные страницы услуг: замена с&nbsp;выездом, восстановление, приём старых АКБ.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="sec-num">07 · Прототип</span>
+  <h2>Чтобы&nbsp;не&nbsp;объяснять словами</h2>
+  <p>Я&nbsp;собрала прототип на&nbsp;ваших настоящих данных: идеях с&nbsp;первого экрана, ценах товаров и&nbsp;услугах. На&nbsp;нём работают вопрос «Что&nbsp;с&nbsp;аккумулятором?», подбор по&nbsp;авто, каталог с&nbsp;поиском и&nbsp;фильтрами, карточка с&nbsp;итоговой ценой и&nbsp;заявка на&nbsp;выезд.</p>
+  <p>Каталог и&nbsp;заказы при&nbsp;этом можно оставить на&nbsp;inSales: меняются витрина и&nbsp;логика, а&nbsp;3&nbsp;747 товаров остаются на&nbsp;месте.</p>
+  <p>Дальше проще один раз открыть и&nbsp;посмотреть самому.</p>
+  <div class="cta">
+    <h3>Прототип сайта РеБэттери</h3>
+    <p>Открывается с&nbsp;компьютера и&nbsp;телефона, регистрация не&nbsp;нужна.</p>
+    <a class="btn" href="https://valeri-bel.github.io/prototipy/rebattery/">Открыть прототип</a>
+    <span class="url">valeri-bel.github.io/prototipy/rebattery/</span>
+  </div>
+  <p class="sub">Честно: вместо фотографий пока заглушки. Подбор показан на&nbsp;шести моделях для&nbsp;примера, соответствия условные. Цены услуг взяты с&nbsp;Яндекс Карт, их&nbsp;нужно подтвердить. Кнопки и&nbsp;формы ничего не&nbsp;отправляют, это&nbsp;демонстрация, а&nbsp;не&nbsp;готовый сайт.</p>
+</section>
+
+<section>
+  <span class="sec-num">08 · Чем&nbsp;зацепить покупателя</span>
+  <h2>Варианты, из&nbsp;которых можно выбрать</h2>
+  <div class="offer offer-main">
+    <span class="badge">заложено в&nbsp;прототип</span>
+    <h3>А.&nbsp;«Сначала проверим. Новый только если&nbsp;нужен»</h3>
+    <p>Бесплатная диагностика как&nbsp;главный вход на&nbsp;сайт. На&nbsp;страницах сетей, которые я&nbsp;открывала, такого обещания я&nbsp;не&nbsp;нашла, а&nbsp;ваши отзывы его&nbsp;уже&nbsp;подтверждают.</p>
+  </div>
+  <div class="offer">
+    <h3>Б. «Не&nbsp;оставим без&nbsp;машины»</h3>
+    <p>Подменный аккумулятор как&nbsp;отдельное обещание на&nbsp;первом экране. Вы&nbsp;уже&nbsp;так&nbsp;делаете, осталось сформулировать условия.</p>
+  </div>
+  <div class="offer">
+    <h3>В.&nbsp;«Цена известна до&nbsp;приезда мастера»</h3>
+    <p>Батарея, приезд и&nbsp;замена одной суммой, до&nbsp;заказа. Это&nbsp;ответ на&nbsp;отзыв, где&nbsp;клиент спрашивает, почему 14&nbsp;900&nbsp;₽ превратились в&nbsp;23&nbsp;850&nbsp;₽.</p>
+  </div>
+  <div class="offer">
+    <h3>Г. «Сдайте старый, узнайте сумму сразу»</h3>
+    <p>Калькулятор приёма старых аккумуляторов и&nbsp;две цены у&nbsp;товара, с&nbsp;обменом и&nbsp;без.&nbsp;Опирается на&nbsp;ваше «до&nbsp;5000 руб», нужно только закрепить условия.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0">
+    <p>Данные собраны 8 ноября 2026 года: ребэттери.рф, Яндекс Карты, 2ГИС, akb.ru, akbmag.ru, akbmoscow.ru, carakb.ru, autobooster.ru, vyzov-mastera.msk.ru, auto2.info.</p>
+    <p><b>Валерия Белецкая</b> — разработка сайтов для&nbsp;малого бизнеса. Прототип: valeri-bel.github.io/prototipy/rebattery · <a href="KP-РеБэттери.pdf">PDF-версия этого документа</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог аккумуляторов · РеБэттери</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="shell-top"></div>
+<div class="page-h"><div class="wrap"><div class="crumb"><a href="index.html">Главная</a> / Каталог</div><h1>Каталог аккумуляторов</h1></div></div>
+<div class="wrap layout">
+  <aside class="side">
+    <form id="carf" style="display:grid;gap:9px">
+      <b>Подбор по&nbsp;авто</b>
+      <select id="mk2" aria-label="Марка"></select>
+      <select id="md2" aria-label="Модель"></select>
+      <button class="btn y">Подобрать</button>
+    </form>
+    <hr style="border:0;border-top:1px solid var(--line);width:100%">
+    <label>Поиск<input id="q" placeholder="Название или бренд"></label>
+    <label>Ёмкость<select id="fcap"><option value="">Любая</option><option value="0-20">до&nbsp;20 А·ч</option><option value="55-65">55–65 А·ч</option><option value="70-80">70–80 А·ч</option><option value="90-110">90–110 А·ч</option><option value="130-200">130–200 А·ч</option></select></label>
+    <label>Полярность<select id="fpol"><option value="">Любая</option><option value="R+">Обратная, R+</option><option value="L+">Прямая, L+</option></select></label>
+    <label>Технология<select id="ftech"><option value="">Любая</option><option>Ca/Ca</option><option>EFB</option><option>AGM</option><option>Литиевый</option></select></label>
+  </aside>
+  <main>
+    <div class="tabs" id="tabs"></div>
+    <div class="carline" id="carline" style="display:none"></div>
+    <p class="bar-info" id="info"></p>
+    <div class="products" id="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))"></div>
+    <p class="src-note">Наличие показано для&nbsp;примера. Цены с&nbsp;ребэттери.рф на&nbsp;08.11.2026.</p>
+  </main>
+</div>
+<div id="shell-foot"></div>
+<script src="js/typo.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
