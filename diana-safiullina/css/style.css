@@ -104,6 +104,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .formats { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; }
 .format { display: flex; flex-direction: column; gap: 14px; padding: 36px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; transition: transform .25s, box-shadow .25s; }
 .format:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(27, 34, 51, .1); }
+.format--wide { grid-column: 1 / -1; }
 .format--lead { grid-row: span 3; background: var(--night); color: var(--on-night); border-color: transparent; justify-content: space-between; padding: 44px; }
 .format--lead h3 { font-size: 44px; }
 .format--lead .format__text { color: var(--on-night-muted); font-size: 19px; }
