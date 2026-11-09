@@ -38,6 +38,76 @@
     '<div class="wrap proto">' + T('Прототип сайта. Формы ничего не отправляют, оплата не подключена, фото упаковок — заглушки. Подготовила Валерия Белецкая.') + '</div>';
   badge();
 
+  /* карточка КБЖУ */
+  function macroCard() {
+    var total = NUTRITION.protein * 4 + NUTRITION.fat * 9 + NUTRITION.carbs * 4;
+    var share = { p: NUTRITION.protein * 4 / total * 100, c: NUTRITION.carbs * 4 / total * 100, f: NUTRITION.fat * 9 / total * 100 };
+    var arc = function (cls, sh, start, delay) {
+      return '<circle class="arc arc-' + cls + '" cx="90" cy="90" r="74" pathLength="100" style="--d:' + Math.max(sh - 4.6, .4).toFixed(2) + ';--t:' + delay + 's;stroke-dashoffset:' + (-(start + 2.3)).toFixed(2) + '"></circle>';
+    };
+    return '<div class="macro">' +
+      '<div class="macro-top"><div class="macro-title caps">КБЖУ</div>' +
+      '<div class="switch" role="group" aria-label="Пересчёт КБЖУ"><i></i><button type="button" class="on" data-base="55">Порция 55 г</button><button type="button" data-base="100">100 г</button></div></div>' +
+      '<div class="macro-ring"><svg viewBox="0 0 180 180" aria-hidden="true"><circle class="track" cx="90" cy="90" r="74"></circle>' +
+      arc('p', share.p, 0, 0) + arc('c', share.c, share.p, .15) + arc('f', share.f, share.p + share.c, .3) + '</svg>' +
+      '<div class="macro-kcal"><b data-v="kcal">195</b><span>ккал</span></div></div>' +
+      '<div class="macro-rows">' +
+      '<div><b data-v="protein">19,8</b><span><i class="dot p"></i>белки, г</span></div>' +
+      '<div><b data-v="fat">1,7</b><span><i class="dot f"></i>жиры, г</span></div>' +
+      '<div><b data-v="carbs">25,3</b><span><i class="dot c"></i>углеводы, г</span></div></div>' +
+      '<p class="macro-note">' + T('По карточке ассорти на Wildberries. Значения по каждому вкусу уточняются.') + '</p></div>';
+  }
+  function num(v, whole) {
+    if (whole) return String(Math.round(v));
+    var r = (Math.round(v * 10 + 1e-6) / 10).toFixed(1);
+    return (r.slice(-2) === '.0' ? r.slice(0, -2) : r).replace('.', ',');
+  }
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function initMacro(root) {
+    var el = root.querySelector('.macro'); if (!el) return;
+    var cur = { kcal: 0, protein: 0, fat: 0, carbs: 0 }, raf;
+    var draw = function () { el.classList.remove('draw'); void el.getBoundingClientRect(); el.classList.add('draw'); };
+    var paint = function (o) { Object.keys(o).forEach(function (k) { el.querySelector('[data-v=' + k + ']').textContent = num(o[k], k === 'kcal'); }); };
+    function go(base) {
+      var to = {}; Object.keys(cur).forEach(function (k) { to[k] = NUTRITION[k] * base / 100; });
+      draw();
+      if (calm) { cur = to; paint(cur); return; }
+      var from = cur, t0 = performance.now();
+      cancelAnimationFrame(raf);
+      (function tick(t) {
+        var k = Math.min(1, (t - t0) / 900), e = 1 - Math.pow(1 - k, 4), o = {};
+        Object.keys(to).forEach(function (x) { o[x] = from[x] + (to[x] - from[x]) * e; });
+        cur = o; paint(o);
+        if (k < 1) raf = requestAnimationFrame(tick); else { cur = to; paint(to); }
+      })(t0);
+    }
+    var sw = el.querySelector('.switch');
+    sw.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b || b.classList.contains('on')) return;
+      sw.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
+      sw.classList.toggle('b100', b.getAttribute('data-base') === '100');
+      go(+b.getAttribute('data-base'));
+    });
+    if (window.IntersectionObserver && !calm) {
+      var seen = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { seen.disconnect(); go(55); } }, { threshold: .3 });
+      seen.observe(el);
+    } else go(55);
+    if (!calm && matchMedia('(hover: hover) and (min-width: 821px)').matches && root.classList.contains('macro-float')) {
+      var stage = root.parentNode;
+      stage.addEventListener('pointermove', function (e) {
+        var r = stage.getBoundingClientRect();
+        el.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 12 + 'deg');
+        el.style.setProperty('--rx', ((e.clientY - r.top) / r.height - .5) * -10 + 'deg');
+      });
+      stage.addEventListener('pointerleave', function () { el.style.setProperty('--ry', '0deg'); el.style.setProperty('--rx', '0deg'); });
+    }
+  }
+  function reveal(sel) {
+    if (calm || !window.IntersectionObserver) return;
+    var io = new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll(sel).forEach(function (el, i) { el.classList.add('reveal'); io.observe(el); });
+  }
+
   /* карточка товара */
   function packArt(p) {
     return '<div class="pack pack-' + p.color + (p.cup ? ' is-cup' : '') + '">' +
@@ -77,6 +147,10 @@
     document.getElementById('faq-list').innerHTML = FAQ.map(function (f) {
       return '<details class="faq"><summary>' + T(f.q) + '<i class="ti ti-plus"></i></summary><p>' + T(f.a) + '</p></details>';
     }).join('');
+    var mf = document.getElementById('macro');
+    mf.innerHTML = macroCard();
+    initMacro(mf);
+    reveal('.sect-head, .group, .card, .step, .who > div, .review, .buy-card, .faq-grid');
   }
 
   /* каталог */
@@ -129,8 +203,6 @@
     var id = new URLSearchParams(location.search).get('id');
     var p = byId(id) || PRODUCTS[0];
     document.title = p.name + ' — My Time';
-    var protein = Math.round(NUTRITION.protein100 * NUTRITION.portion / 100);
-    var kcal = Math.round(NUTRITION.kcal100 * NUTRITION.portion / 100);
     var same = PRODUCTS.filter(function (x) { return x.group === p.group && x.id !== p.id; }).slice(0, 4);
     document.getElementById('item').innerHTML =
       '<nav class="crumbs"><a href="catalog.html">Каталог</a><span>/</span><a href="catalog.html?group=' + p.group + '">' + T(GROUPS[p.group].name) + '</a></nav>' +
@@ -139,16 +211,12 @@
       '<div class="item-price"><b>' + fmt(p.price) + '</b><span>' + fmt(perPortion(p)) + ' за порцию 55 г</span></div>' +
       (p.gift ? '<p class="gift"><i class="ti ti-gift"></i>' + T(p.gift) + '</p>' : '') +
       '<div class="item-buy"><div class="qty"><button id="minus" aria-label="Меньше">−</button><span id="qty">1</span><button id="plus" aria-label="Больше">+</button></div><button class="btn" id="buy">В корзину</button></div>' +
-      '<div class="label"><div class="label-head">В одной порции 55 г</div>' +
-      '<div class="label-row big"><span>Белок</span><b>≈' + protein + ' г</b></div>' +
-      '<div class="label-row"><span>Энергетическая ценность</span><b>≈' + kcal + ' ккал</b></div>' +
-      '<div class="label-row"><span>Сахар в составе</span><b>нет</b></div>' +
-      '<div class="label-row"><span>Вода и время</span><b>150 мл, 5 мин</b></div>' +
-      '<div class="label-note">' + T('36 г белка и 355 ккал на 100 г из карточки Wildberries. Нужно от вас: жиры, углеводы и значения по каждому вкусу.') + '</div></div>' +
+      '<div id="macro-item">' + macroCard() + '</div>' +
       '<h2 class="sm">Состав</h2><p>' + T(p.composition) + '</p>' +
       (p.ask ? '<div class="need">' + T('Нужно от вас: ' + p.ask.toLowerCase()) + '</div>' : '') +
       '<p class="src">' + T('Данные с действующей карточки: ') + '<a href="' + BASE + p.src + '" target="_blank" rel="noopener">gesundfood.pro</a></p></div></div>' +
       (same.length ? '<section class="sect"><h2>Ещё в разделе «' + T(GROUPS[p.group].name) + '»</h2><div class="grid">' + same.map(card).join('') + '</div></section>' : '');
+    initMacro(document.getElementById('macro-item'));
     var qty = 1, qEl = document.getElementById('qty');
     document.getElementById('minus').onclick = function () { qty = Math.max(1, qty - 1); qEl.textContent = qty; };
     document.getElementById('plus').onclick = function () { qty = Math.min(20, qty + 1); qEl.textContent = qty; };

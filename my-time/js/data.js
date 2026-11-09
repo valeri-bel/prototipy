@@ -1,8 +1,8 @@
 /* Выборка из каталога gesundfood.pro, собрано 09.11.2026.
    Названия, цены, составы — дословно с карточек сайта, источник в поле src.
-   Белок и калории — из карточки Wildberries 147784240 (ассорти, 9 пакетиков). */
+   КБЖУ на 100 г — из карточки Wildberries 257017375 (ассорти, 12 пакетиков). */
 var BASE = 'https://gesundfood.pro/nashi-kashi/';
-var NUTRITION = { protein100: 36, kcal100: 355, portion: 55 };
+var NUTRITION = { protein: 36, fat: 3, carbs: 46, kcal: 355, portion: 55 };
 
 var GROUPS = {
   mono:    { name: 'Моновкусы',       lead: 'Одна крупа, один вкус. 9 порций в боксе.' },
