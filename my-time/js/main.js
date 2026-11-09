@@ -23,7 +23,7 @@
   /* шапка и подвал */
   var nav = [['catalog.html', 'Каталог'], ['index.html#how', 'Как готовить'], ['index.html#reviews', 'Отзывы'], ['index.html#buy', 'Доставка и где купить'], ['index.html#faq', 'Вопросы']];
   document.getElementById('site-header').innerHTML =
-    '<div class="wrap head"><a class="logo" href="index.html" aria-label="My Time, на главную"><img src="img/logo.svg" alt="My Time"></a>' +
+    '<div class="wrap head"><a class="logo" href="index.html" aria-label="My Time, на главную"><img src="img/logo.png" alt="My Time"></a>' +
     '<nav class="nav" id="nav">' + nav.map(function (n) { return '<a href="' + n[0] + '">' + T(n[1]) + '</a>'; }).join('') + '</nav>' +
     '<a class="tel" href="tel:88005505835">8 800 550-58-35</a>' +
     '<a class="cart-link" href="cart.html" aria-label="Корзина"><i class="ti ti-shopping-bag"></i><span id="cart-count" class="count" hidden>0</span></a>' +
@@ -31,7 +31,7 @@
   document.getElementById('burger').addEventListener('click', function () { document.getElementById('nav').classList.toggle('open'); });
 
   document.getElementById('site-footer').innerHTML =
-    '<div class="wrap foot"><div><img src="img/logo.svg" alt="My Time" class="foot-logo"><p>' + T('Протеиновые каши без сахара, сои, красителей и консервантов.') + '</p></div>' +
+    '<div class="wrap foot"><div><img src="img/logo.png" alt="My Time" class="foot-logo"><p>' + T('Протеиновые каши без сахара, сои, красителей и консервантов.') + '</p></div>' +
     '<div><h4>Каталог</h4>' + Object.keys(GROUPS).map(function (g) { return '<a href="catalog.html?group=' + g + '">' + T(GROUPS[g].name) + '</a>'; }).join('') + '</div>' +
     '<div><h4>Контакты</h4><a href="tel:88005505835">8 800 550-58-35</a><a href="mailto:info@gesundfood.pro">info@gesundfood.pro</a><span>' + T('Нижегородская область, пос. Решетиха, ул. Затылкова') + '</span><span>' + T('Пн–пт с 9:00 до 17:00') + '</span></div>' +
     '<div><h4>Маркетплейсы</h4><a href="' + SHOPS.wb + '" target="_blank" rel="noopener">Wildberries</a><a href="' + SHOPS.ozon + '" target="_blank" rel="noopener">Ozon</a></div></div>' +
