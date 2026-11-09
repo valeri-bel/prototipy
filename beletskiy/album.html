@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Альбом работ | Геннадий Б., сварщик</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="index.html"><i class="mark" style="font-style:normal">ГБ</i><span><b>Геннадий&nbsp;Б.</b><span>сварочные работы</span></span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="works.html">Работы</a>
+      <a href="index.html#prices">Цены</a>
+      <a href="index.html#experience">Опыт</a>
+      <a href="index.html#place">Где&nbsp;работаю</a>
+    </nav>
+    <a class="btn btn--heat" href="index.html#request">Рассчитать работу</a>
+  </div>
+</header>
+<main id="album">
+  <section class="pagehead">
+    <div class="wrap">
+      <a class="back" href="works.html">← Все&nbsp;работы</a>
+      <h1 id="aName"></h1>
+      <p><span id="aNote"></span> <span id="aCount"></span></p>
+    </div>
+  </section>
+  <div class="bead-wrap"><div class="bead" aria-hidden="true"></div></div>
+  <section class="sec--tight">
+    <div class="wrap alb">
+      <div class="phs" id="aPhotos"></div>
+      <aside class="side">
+        <h3>Цены на&nbsp;услуги</h3>
+        <ul class="slist" id="aPrices"></ul>
+        <h3>Виды работ в&nbsp;профиле</h3>
+        <ul class="tlist" id="aTags"></ul>
+        <a class="btn btn--heat" href="index.html#request">Рассчитать похожую работу</a>
+      </aside>
+    </div>
+  </section>
+  <section class="sec--tight" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><div><p class="tag">Ещё&nbsp;работы</p></div></div>
+      <div class="works" id="aMore"></div>
+    </div>
+  </section>
+</main>
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр снимка" hidden>
+  <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+  <button type="button" id="lbClose" aria-label="Закрыть">×</button>
+  <button type="button" id="lbPrev" aria-label="Предыдущий снимок">←</button>
+  <button type="button" id="lbNext" aria-label="Следующий снимок">→</button>
+  <div id="lbCount"></div>
+</div>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>Прототип сайта. Данные и&nbsp;фото из&nbsp;профиля на&nbsp;Профи.ру, сбор 9 ноября 2026 года.</span>
+    <span>Подготовила Валерия Белецкая</span>
+  </div>
+</footer>
+<script src="js/typo.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
