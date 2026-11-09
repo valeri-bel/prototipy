@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>My Time&nbsp;— анализ и&nbsp;предложение по&nbsp;сайту</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Роли цветов постоянные, значения — под клиента: акцент из логотипа или обложки группы */
+:root{
+  --sage:#16897C; --sage-dark:#0F4F49; --sage-ink:#0F5E56; --gold:#E0623F; --mint:#BDEDE4;
+  --bg:#FBF9F6; --paper:#fff; --ink:#23241F; --muted:#666A63; --line:#E3DFD3; --tint:#E5F5F2; --warn:#FBF3E2;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 Manrope,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+h1{font-size:46px;margin-bottom:16px}
+h2{font-size:32px;margin:0 0 6px}
+h3{font-size:22px;margin:0 0 6px}
+p{margin:11px 0}
+.sub{color:var(--muted);font-size:14.5px}
+p.sub{max-width:72ch}
+header{background:var(--sage-dark);color:#fff;padding:56px 0 48px}
+header .eyebrow{letter-spacing:3.4px;text-transform:uppercase;font-size:12px;color:var(--mint);margin-bottom:18px}
+header h1{color:#fff;max-width:24ch}
+header p{color:#E4E9E1;max-width:64ch}
+header .sub{color:#AEB9AE;margin-top:20px}
+header a{color:#E4E9E1}
+section{padding:46px 0 6px}
+.sec-num{display:block;width:max-content;font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--sage);border-bottom:2px solid var(--sage);padding-bottom:5px;margin-bottom:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin:14px 0}
+.card .n{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--sage);line-height:1;margin-bottom:6px}
+.grid.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid.two{grid-template-columns:1fr} h1{font-size:36px}}
+.adv{list-style:none;padding:0;margin:14px 0}
+.adv li{padding:11px 0 11px 26px;border-bottom:1px solid var(--line);position:relative}
+.adv li:before{content:"";position:absolute;left:4px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.adv li:last-child{border:0}
+.why{background:var(--tint);border-left:3px solid var(--sage);border-radius:0 9px 9px 0;padding:11px 16px;margin-top:12px;font-size:15.5px}
+.seg{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:18px 22px;margin:12px 0}
+.tag{display:inline-block;background:var(--tint);color:var(--sage-ink);font-size:12.5px;letter-spacing:.4px;padding:3px 11px;border-radius:999px;margin-bottom:8px}
+.src{color:var(--muted);font-size:14px;margin-top:2px}
+.note{background:var(--warn);border-radius:12px;padding:16px 20px;margin:18px 0;font-size:15.5px}
+.note strong{color:#7A5A22}
+ol.tasks{padding-left:22px}
+ol.tasks li{margin:12px 0}
+.cta{background:var(--sage-dark);color:#fff;border-radius:16px;padding:34px;text-align:center;margin:22px 0}
+.cta h3{color:#fff;font-size:28px}
+.cta a.btn{display:inline-block;background:var(--mint);color:var(--sage-dark);padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:700;margin-top:14px}
+.cta .url{display:block;margin-top:13px;color:#D6DED4;font-size:15px;word-break:break-all}
+.cta p{color:#DCE3DA;max-width:56ch;margin:0 auto}
+.offer{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin:14px 0}
+.offer-main{border:2px solid var(--sage);background:#FAFCF8}
+.badge{display:inline-block;background:var(--sage);color:#fff;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;padding:3px 11px;border-radius:6px;margin-bottom:9px}
+blockquote{margin:14px 0;padding:14px 20px;background:var(--paper);border-left:3px solid var(--gold);border-radius:0 9px 9px 0;font-style:italic;color:#353B36}
+footer{margin-top:56px;padding:30px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer p{max-width:70ch}
+footer a{color:var(--sage-dark)}
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  .wrap{max-width:100%;padding:0 14mm}
+  header{padding:16mm 0 11mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{padding:7mm 0 0}
+  h2{margin-top:2mm}
+  .adv li{padding:7px 0 7px 24px}
+  p{margin:8px 0}
+  .card,.seg,.offer,.cta,.note,.why,blockquote{page-break-inside:avoid;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2,h3,.sec-num{page-break-after:avoid;break-after:avoid}
+  .card,.seg,.offer{padding:16px 20px;margin:10px 0}
+  .why{margin-top:9px;padding:9px 14px}
+  .cta{padding:24px;margin:16px 0}
+  footer{margin-top:28px;padding:18px 0 20px}
+  h1{font-size:28pt}h2{font-size:20pt}h3{font-size:14pt}
+  a{color:inherit;text-decoration:none}
+  @page{margin:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Анализ и&nbsp;предложение · Валерия Белецкая</div>
+    <h1>My Time: разбор сайта, конкурентов и&nbsp;предложение по&nbsp;новому сайту</h1>
+    <p>Здравствуйте! Перед&nbsp;тем&nbsp;как&nbsp;что-то предлагать, я&nbsp;разобрала ваш&nbsp;сайт: все&nbsp;17 карточек, цены, описания и&nbsp;условия покупки. Посмотрела магазины на&nbsp;Wildberries и&nbsp;Ozon, прочитала отзывы покупателей и&nbsp;сравнила вас с&nbsp;другими производителями протеиновых каш. Ниже то,&nbsp;что&nbsp;я&nbsp;увидела и&nbsp;что&nbsp;предлагаю сделать.</p>
+    <p class="sub">Источники: <a href="https://gesundfood.pro/">gesundfood.pro</a>, ваши магазины на&nbsp;Wildberries и&nbsp;Ozon, сайты и&nbsp;карточки конкурентов. Данные собраны 9 ноября 2026 года.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <span class="sec-num">01 · Главные выводы</span>
+  <h2>Пять вещей, которые я&nbsp;увидела</h2>
+  <div class="card">
+    <div class="n">1</div>
+    <h3>Главное доверие к&nbsp;вам сейчас живёт на&nbsp;маркетплейсах</h3>
+    <p>На&nbsp;Wildberries у&nbsp;магазина рейтинг 4,8, 1&nbsp;066 оценок и&nbsp;9&nbsp;264 проданных товара, на&nbsp;Ozon рейтинг 4,9, 770 отзывов и&nbsp;3&nbsp;517 заказов. На&nbsp;сайте нет&nbsp;ни&nbsp;оценки, ни&nbsp;одного отзыва.</p>
+  </div>
+  <div class="card">
+    <div class="n">2</div>
+    <h3>На&nbsp;сайте не&nbsp;видно цифры, ради которой покупают протеиновую кашу</h3>
+    <p>Калорийности и&nbsp;таблицы БЖУ нет&nbsp;ни&nbsp;на&nbsp;одной из&nbsp;17 карточек, а&nbsp;содержание белка 36&nbsp;% указано только у&nbsp;трёх наборов. На&nbsp;Wildberries эти&nbsp;данные есть: 36 г белка и&nbsp;355 ккал на&nbsp;100 г.</p>
+  </div>
+  <div class="card">
+    <div class="n">3</div>
+    <h3>На&nbsp;сайте только часть того, что&nbsp;вы&nbsp;продаёте</h3>
+    <p>На&nbsp;сайте 17 позиций, в&nbsp;магазине на&nbsp;Wildberries открылось 40. На&nbsp;сайте нет&nbsp;картофельного пюре, упаковок на&nbsp;990 г и&nbsp;сахарозаменителя, хотя пюре уже&nbsp;кладётся в&nbsp;подарок к&nbsp;«Полному ассорти».</p>
+  </div>
+  <div class="card">
+    <div class="n">4</div>
+    <h3>Покупателю пока не&nbsp;за&nbsp;чем&nbsp;идти именно на&nbsp;сайт</h3>
+    <p>Цена 9 пакетиков на&nbsp;сайте 1&nbsp;250&nbsp;₽, на&nbsp;Wildberries сегодня 1&nbsp;167–1&nbsp;269&nbsp;₽. Про&nbsp;доставку сказано одно: после&nbsp;заказа свяжется менеджер. Ни&nbsp;сроков, ни&nbsp;стоимости, ни&nbsp;способов оплаты заранее не&nbsp;узнать.</p>
+  </div>
+  <div class="card">
+    <div class="n">5</div>
+    <h3>Самое сильное отличие спрятано в&nbsp;описании</h3>
+    <p>Порция у&nbsp;вас 55 г и&nbsp;около&nbsp;20 г белка, у&nbsp;Леовит CHAMP пакетик 40 г и&nbsp;20–30&nbsp;% белка. Формат тоже приходится искать в&nbsp;тексте: 1&nbsp;150&nbsp;₽ это&nbsp;дой-пак, 1&nbsp;250&nbsp;₽ это&nbsp;9 пакетиков. Цены за&nbsp;порцию и&nbsp;выбора по&nbsp;крупе на&nbsp;сайте нет.</p>
+  </div>
+</section>
+
+<section>
+  <span class="sec-num">02 · Ваши преимущества</span>
+  <h2>Что&nbsp;у&nbsp;вас уже&nbsp;сильного</h2>
+  <p class="sub">Это&nbsp;не&nbsp;мои придумки. Всё взято с&nbsp;вашего сайта, из&nbsp;магазинов на&nbsp;маркетплейсах и&nbsp;отзывов ваших покупателей.</p>
+  <ul class="adv">
+    <li><b>Вас уже&nbsp;выбирают.</b> 9&nbsp;264 проданных товара на&nbsp;Wildberries и&nbsp;3&nbsp;517 заказов на&nbsp;Ozon.</li>
+    <li><b>Высокие оценки на&nbsp;обеих площадках.</b> 4,8 на&nbsp;Wildberries при&nbsp;1&nbsp;066 оценках и&nbsp;4,9 на&nbsp;Ozon при&nbsp;770 отзывах.</li>
+    <li><b>Большая порция.</b> Это&nbsp;замечают сами покупатели: «И&nbsp;масса 55 г, это&nbsp;больше чем&nbsp;у&nbsp;других производителей (40 г. обычно)».</li>
+    <li><b>Много белка в&nbsp;порции.</b> 36 г на&nbsp;100 г, то&nbsp;есть около&nbsp;20 г в&nbsp;одном пакетике 55 г.</li>
+    <li><b>Пять круп.</b> Овсяная, рисовая, гречневая, пшённая, кукурузная. Есть отдельные наборы без&nbsp;овсянки.</li>
+    <li><b>Чистое обещание.</b> «Без&nbsp;сахара, СОИ, красителей и&nbsp;консервантов».</li>
+    <li><b>Сытость отмечают сами покупатели.</b> «Каши очень вкусные и&nbsp;сытные, мне хватает этого завтрака на&nbsp;весь&nbsp;день».</li>
+    <li><b>Хорошо растворяется.</b> В&nbsp;отзывах отмечают, что&nbsp;каша «быстро» растворяется и&nbsp;«без&nbsp;комков».</li>
+    <li><b>Удобные форматы.</b> Набор на&nbsp;три порции за&nbsp;450&nbsp;₽, дой-пак с&nbsp;зип-локом, порционные пакетики, стаканы.</li>
+    <li><b>К&nbsp;вам возвращаются.</b> «Заказываю в&nbsp;третий раз», «Купила дважды, оставила в&nbsp;закладках».</li>
+  </ul>
+</section>
+
+<section>
+  <span class="sec-num">03 · Сейчас</span>
+  <h2>Что&nbsp;работает и&nbsp;что&nbsp;провисает</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>Работает</h3>
+      <ul class="adv">
+        <li>Сайт есть, на&nbsp;нём есть корзина</li>
+        <li>Линейка понятно делится на&nbsp;ассорти и&nbsp;моновкусы</li>
+        <li>На&nbsp;карточках указан состав</li>
+        <li>Со&nbsp;страницы доставки есть переход на&nbsp;Wildberries и&nbsp;Ozon</li>
+        <li>Есть недорогой вход: набор на&nbsp;три порции</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Провисает</h3>
+      <ul class="adv">
+        <li>Сайт не&nbsp;показывает ваших оценок и&nbsp;отзывов</li>
+        <li>Нет&nbsp;БЖУ и&nbsp;калорийности на&nbsp;карточках</li>
+        <li>Нет&nbsp;сроков и&nbsp;цены доставки, оплата только через&nbsp;менеджера</li>
+        <li>Нельзя выбрать по&nbsp;крупе и&nbsp;формату, не&nbsp;видно цены порции</li>
+        <li>У&nbsp;страниц нет&nbsp;описаний для&nbsp;поиска и&nbsp;карты сайта, главная называется просто «Главная»</li>
+        <li>Описания повторяются от&nbsp;карточки к&nbsp;карточке, в&nbsp;них есть опечатки</li>
+        <li>Не&nbsp;нашла реквизитов, политики персональных данных и&nbsp;оферты</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="sec-num">04 · Конкуренты</span>
+  <h2>Где&nbsp;ещё&nbsp;покупают протеиновую кашу</h2>
+  <p>Вы&nbsp;продаёте через&nbsp;маркетплейсы, поэтому конкуренты здесь не&nbsp;соседние магазины, а&nbsp;бренды на&nbsp;тех&nbsp;же площадках. Я&nbsp;посмотрела первую выдачу Wildberries по&nbsp;запросу «протеиновая каша»: 61 карточка, 25 брендов, ваших карточек 5. Ниже заметные бренды из&nbsp;этой&nbsp;выдачи и&nbsp;их&nbsp;собственные сайты.</p>
+  <div class="card">
+    <span class="tag">20&nbsp;913 оценок на&nbsp;Wildberries</span>
+    <h3>ЛЕОВИТ, каши CHAMP</h3>
+    <p class="src">leovit.ru, отдельный магазин leovit.shop · Wildberries 760&nbsp;₽, рейтинг 4,9</p>
+    <p>Пакетик 40 г, белка 20&nbsp;% или&nbsp;30&nbsp;%. На&nbsp;сайте отдельная страница линейки и&nbsp;переходы в&nbsp;свой магазин, на&nbsp;Wildberries и&nbsp;Ozon. В&nbsp;«Фитомаркете» 10 пакетиков стоят 722&nbsp;₽, это&nbsp;72&nbsp;₽ за&nbsp;порцию и&nbsp;около&nbsp;8 г белка при&nbsp;20&nbsp;%.</p>
+    <div class="why">Ваша порция дороже, 128–139&nbsp;₽, но&nbsp;в&nbsp;ней около&nbsp;20 г белка. Грамм белка у&nbsp;вас обходится в&nbsp;6,5–7&nbsp;₽, а&nbsp;у&nbsp;CHAMP 20&nbsp;% примерно в&nbsp;9&nbsp;₽. На&nbsp;сайте это&nbsp;можно показать одной строкой.</div>
+  </div>
+  <div class="card">
+    <span class="tag">свой интернет-магазин</span>
+    <h3>BombBar</h3>
+    <p class="src">bombbar.ru, официальный интернет-магазин</p>
+    <p>На&nbsp;сайте заявлены бесплатная доставка, бонусы за&nbsp;покупки и&nbsp;бесплатный диетолог. Овсяная каша 60 г с&nbsp;20 г белка стоит 64&nbsp;₽ в&nbsp;магазине sportivnoepitanie.ru, в&nbsp;момент проверки её&nbsp;не&nbsp;было в&nbsp;наличии. На&nbsp;главной bombbar.ru раздела с&nbsp;кашами я&nbsp;не&nbsp;нашла.</p>
+    <div class="why">По&nbsp;цене белка BombBar дешевле, спорить ценой не&nbsp;стоит. Ваш&nbsp;ход другой: узкая специализация на&nbsp;кашах, пять круп и&nbsp;готовые наборы вкусов.</div>
+  </div>
+  <div class="card">
+    <span class="tag">103 оценки, рейтинг 5,0</span>
+    <h3>Prime Kraft</h3>
+    <p class="src">primekraft.ru, раздел «Протеиновые каши» · Wildberries 646–711&nbsp;₽</p>
+    <p>Свой магазин, каши выделены в&nbsp;отдельный раздел. На&nbsp;сайте цена 750&nbsp;₽ вместо 1&nbsp;100&nbsp;₽, скидка 32&nbsp;%. В&nbsp;найденных карточках каша овсяная, объём упаковки я&nbsp;не&nbsp;сверяла.</p>
+    <div class="why">Отдельный раздел каш есть и&nbsp;у&nbsp;спортивного бренда. У&nbsp;вас каша это&nbsp;весь&nbsp;сайт, и&nbsp;его&nbsp;можно сделать заметно удобнее для&nbsp;выбора.</div>
+  </div>
+  <div class="card">
+    <span class="tag">541 оценка, рейтинг 4,8</span>
+    <h3>Эстетика вкуса</h3>
+    <p class="src">Wildberries, 355&nbsp;₽ за&nbsp;5 штук с&nbsp;клубникой</p>
+    <p>Низкая цена входа на&nbsp;маркетплейсе. Собственный сайт я&nbsp;не&nbsp;проверяла, сравнивать могу только карточку.</p>
+    <div class="why">На&nbsp;цену входа у&nbsp;вас есть ответ: набор из&nbsp;трёх порций за&nbsp;450&nbsp;₽. Его&nbsp;стоит поставить на&nbsp;первый экран.</div>
+  </div>
+  <div class="note"><strong>Что&nbsp;важно во&nbsp;всей выдаче.</strong> В&nbsp;карточках Леовит, BombBar и&nbsp;Prime Kraft, которые я&nbsp;смотрела, основа это&nbsp;овёс, иногда лён. Рисовых, гречневых, пшённых и&nbsp;кукурузных каш с&nbsp;таким содержанием белка у&nbsp;них я&nbsp;не&nbsp;нашла. Для&nbsp;людей, которым овсянка не&nbsp;подходит или&nbsp;надоела, это&nbsp;причина выбрать именно вас, и&nbsp;сейчас сайт этого не&nbsp;показывает.</div>
+</section>
+
+<section>
+  <span class="sec-num">05 · Покупатели</span>
+  <h2>Кто к&nbsp;вам приходит</h2>
+  <div class="seg"><span class="tag">главный спрос</span>
+    <h3>Те,&nbsp;кто тренируется и&nbsp;считает белок</h3>
+    <p>«Нужно добрать белок в&nbsp;день + сложный углевод». Вопрос к&nbsp;сайту: сколько белка в&nbsp;порции и&nbsp;что&nbsp;ещё&nbsp;в&nbsp;составе.</p></div>
+  <div class="seg"><span class="tag">контроль веса</span>
+    <h3>Те,&nbsp;кто следит за&nbsp;питанием</h3>
+    <p>Вопрос к&nbsp;сайту: сколько калорий, есть&nbsp;ли сахар, насколько это&nbsp;сытно.</p></div>
+  <div class="seg"><span class="tag">вход в&nbsp;бренд</span>
+    <h3>Те,&nbsp;кто пробует впервые</h3>
+    <p>Вопрос к&nbsp;сайту: какой вкус выбрать и&nbsp;можно&nbsp;ли попробовать, не&nbsp;покупая большую коробку.</p></div>
+  <div class="seg"><span class="tag">повторные заказы</span>
+    <h3>Те,&nbsp;кто уже&nbsp;полюбил</h3>
+    <p>«Заказываю в&nbsp;третий раз». Вопрос к&nbsp;сайту: как&nbsp;быстро заказать ту&nbsp;же кашу снова и&nbsp;нет&nbsp;ли выгоды за&nbsp;постоянство.</p></div>
+  <div class="seg"><span class="tag">высокий чек</span>
+    <h3>Те,&nbsp;кто покупает в&nbsp;подарок</h3>
+    <p>Подарочный бокс и&nbsp;наборы вкусов уже&nbsp;есть. Вопрос к&nbsp;сайту: что&nbsp;подарить и&nbsp;как&nbsp;это&nbsp;выглядит в&nbsp;коробке.</p></div>
+</section>
+
+<section>
+  <span class="sec-num">06 · Логика сайта</span>
+  <h2>Что&nbsp;должен решать сайт</h2>
+  <ol class="tasks">
+    <li><b>Показывать главное сразу.</b> Белок, калории, сахар и&nbsp;время приготовления видны на&nbsp;первом экране и&nbsp;в&nbsp;каждой карточке.</li>
+    <li><b>Помогать выбрать.</b> Подбор по&nbsp;крупе, формату и&nbsp;вкусу, отдельный фильтр «без&nbsp;овсянки».</li>
+    <li><b>Сравнивать форматы честно.</b> У&nbsp;каждой упаковки видна цена за&nbsp;порцию.</li>
+    <li><b>Давать повод купить здесь.</b> Полная линейка, понятные условия доставки и&nbsp;выгода, которой нет&nbsp;на&nbsp;маркетплейсе.</li>
+    <li><b>Переносить доверие.</b> Ваши оценки и&nbsp;настоящие отзывы с&nbsp;площадок прямо на&nbsp;сайте.</li>
+    <li><b>Забирать поиск.</b> Отдельные страницы и&nbsp;описания под&nbsp;запросы про&nbsp;рисовую, гречневую и&nbsp;другие протеиновые каши.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="sec-num">07 · Прототип</span>
+  <h2>Чтобы&nbsp;не&nbsp;объяснять словами</h2>
+  <p>Я&nbsp;собрала прототип магазина на&nbsp;данных вашего сайта и&nbsp;маркетплейсов: главная, каталог с&nbsp;поиском и&nbsp;фильтрами, карточка каши и&nbsp;корзина с&nbsp;оформлением.</p>
+  <p>В&nbsp;основе этикетка с&nbsp;белком и&nbsp;калориями, цена за&nbsp;порцию и&nbsp;подбор по&nbsp;крупе. Дальше проще один раз открыть и&nbsp;посмотреть самому.</p>
+  <div class="cta">
+    <h3>Прототип сайта My Time</h3>
+    <p>Открывается с&nbsp;компьютера и&nbsp;телефона, регистрация не&nbsp;нужна.</p>
+    <a class="btn" href="https://valeri-bel.github.io/prototipy/my-time/">Открыть прототип</a>
+    <span class="url">valeri-bel.github.io/prototipy/my-time</span>
+  </div>
+  <p class="sub">Честно: вместо фотографий пока заглушки, поставим ваши снимки. В&nbsp;прототипе показана часть линейки, белок и&nbsp;калории на&nbsp;порцию рассчитаны по&nbsp;одной карточке Wildberries. Кнопки ничего не&nbsp;отправляют: это&nbsp;демонстрация, а&nbsp;не&nbsp;готовый сайт.</p>
+</section>
+
+<section>
+  <span class="sec-num">08 · Чем&nbsp;зацепить покупателя</span>
+  <h2>Варианты, из&nbsp;которых можно выбрать</h2>
+  <div class="offer offer-main">
+    <span class="badge">заложено в&nbsp;прототип</span>
+    <h3>А.&nbsp;Попробовать за&nbsp;450&nbsp;₽</h3>
+    <p>Набор на&nbsp;три разных вкуса уже&nbsp;есть и&nbsp;стоит меньше коробки. Он&nbsp;снимает главный страх, что&nbsp;вкус не&nbsp;подойдёт, и&nbsp;ведёт к&nbsp;покупке большой упаковки.</p>
+  </div>
+  <div class="offer">
+    <h3>Б. Запас на&nbsp;месяц</h3>
+    <p>Для&nbsp;тех, кто заказывает повторно: любимая каша с&nbsp;заранее понятной ценой и&nbsp;напоминанием о&nbsp;новом заказе. Покупатели уже&nbsp;пишут, что&nbsp;заказывают по&nbsp;второму и&nbsp;третьему разу.</p>
+  </div>
+  <div class="offer">
+    <h3>В.&nbsp;Коробка в&nbsp;подарок</h3>
+    <p>Отдельная страница для&nbsp;подарочных боксов и&nbsp;наборов. На&nbsp;сайте уже&nbsp;сказано, что&nbsp;каша подходит в&nbsp;подарок, но&nbsp;отдельного предложения пока нет.</p>
+  </div>
+  <div class="offer">
+    <h3>Г. Завтрак и&nbsp;ужин от&nbsp;My Time</h3>
+    <p>Протеиновое картофельное пюре продаётся на&nbsp;маркетплейсах, но&nbsp;его&nbsp;нет&nbsp;на&nbsp;сайте. Если&nbsp;добавить его&nbsp;в&nbsp;наборы с&nbsp;кашами, вырастет средний чек, а&nbsp;покупатель получит то,&nbsp;чего нет&nbsp;в&nbsp;обычной карточке.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0">
+    <p>Данные собраны 9 ноября 2026 года: <a href="https://gesundfood.pro/">gesundfood.pro</a>, <a href="https://www.wildberries.ru/seller/1171054">магазин на&nbsp;Wildberries</a>, магазин «Качественные продукты» на&nbsp;Ozon, leovit.ru, bombbar.ru, primekraft.ru, fitomarket.ru, sportivnoepitanie.ru. Цены на&nbsp;маркетплейсах меняются и&nbsp;зависят от&nbsp;акций и&nbsp;способа оплаты.</p>
+    <p><b>Валерия Белецкая</b> — разработка сайтов для&nbsp;малого бизнеса. Прототип: valeri-bel.github.io/prototipy/my-time · <a href="KP-My-Time.pdf">PDF-версия этого документа</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
