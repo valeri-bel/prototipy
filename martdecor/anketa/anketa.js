@@ -13,9 +13,21 @@
   var sending = false;
   var retryTimer = null;
   var active = null; // текущая запись
+  var drafts = {}; // записанные, но ещё не сохранённые: номер вопроса → id в хранилище
+  var KEY = readKey();
 
   function t(s) { return window.typo ? window.typo(s) : s; }
   function endpoint() { return window.BRIEF_ENDPOINT || ""; }
+  /* Личный ключ клиента приходит в ссылке (#k=…) и запоминается: по нему страница подтягивает уже отправленные ответы */
+  function readKey() {
+    var m = /[#&]k=([\w-]+)/.exec(location.hash);
+    var key = m ? m[1] : "";
+    try {
+      if (key) localStorage.setItem(STORE + "-key", key);
+      else key = localStorage.getItem(STORE + "-key") || "";
+    } catch (e) { /* без хранилища ключ живёт только в ссылке */ }
+    return key;
+  }
 
   function load() {
     var empty = { answers: {}, sent: {}, voices: {} };
@@ -173,9 +185,107 @@
       signal: ctrl.signal
     }).then(function (r) { return r.json(); }).then(function (res) {
       clearTimeout(timer);
-      if (!res || !res.ok) throw new Error((res && res.error) || "bad response");
+      if (!res || !res.ok) {
+        var refused = new Error((res && res.error) || "bad response");
+        refused.server = true; // скрипт ответил отказом: повтор не поможет
+        throw refused;
+      }
       return res;
     }, function (err) { clearTimeout(timer); throw err; });
+  }
+
+  /* ---------- Записи, которые ждут отправки, живут в IndexedDB: переживают перезагрузку страницы ---------- */
+  var AUDIO_DB = STORE + "-audio";
+  function audioDb() {
+    return new Promise(function (resolve, reject) {
+      if (!window.indexedDB) { reject(new Error("no indexedDB")); return; }
+      var req = indexedDB.open(AUDIO_DB, 1);
+      req.onupgradeneeded = function () { req.result.createObjectStore("pending", { keyPath: "id" }); };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { reject(req.error); };
+    });
+  }
+  function audioTx(mode, work) {
+    return audioDb().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction("pending", mode);
+        var req = work(tx.objectStore("pending"));
+        tx.oncomplete = function () { resolve(req && req.result); };
+        tx.onerror = tx.onabort = function () { reject(tx.error); };
+      });
+    });
+  }
+  function rememberAudio(job) {
+    return Promise.resolve().then(function () { return job.blob.arrayBuffer(); }).then(function (buf) {
+      return audioTx("readwrite", function (st) {
+        return st.put({ id: job.id, n: job.n, mime: job.mime, seconds: job.seconds, draft: !!job.draft, buf: buf });
+      });
+    }).catch(function () { /* нет хранилища: запись живёт только в памяти */ });
+  }
+  function forgetAudio(id) {
+    return audioTx("readwrite", function (st) { return st.delete(id); }).catch(function () {});
+  }
+  function restoreAudio() {
+    return audioTx("readonly", function (st) { return st.getAll(); }).then(function (rows) {
+      (rows || []).forEach(function (row) {
+        if (!cards[row.n]) return;
+        var blob = new Blob([row.buf], { type: row.mime });
+        if (row.draft) {
+          if (drafts[row.n]) forgetAudio(drafts[row.n]);
+          review(row.n, blob, row.mime, row.seconds, row.id);
+          setStatus(row.n, "Здесь осталась ваша запись, которую вы не успели сохранить. Послушайте и сохраните.");
+          return;
+        }
+        voiceQueue.push({ id: row.id, n: row.n, mime: row.mime, seconds: row.seconds, blob: blob });
+        setStatus(row.n, "Отправляем запись, сделанную раньше…");
+      });
+    }).catch(function () {});
+  }
+  function toBase64(blob) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () { resolve(String(reader.result).split(",")[1] || ""); };
+      reader.onerror = function () { reject(reader.error); };
+      reader.readAsDataURL(blob);
+    });
+  }
+  /* Браузеры называют формат по-разному (video/mp4, audio/x-m4a…): приводим к тому, что принимает скрипт */
+  function audioType(raw) {
+    var t = String(raw || "").toLowerCase();
+    if (t.indexOf("mp4") >= 0 || t.indexOf("m4a") >= 0 || t.indexOf("aac") >= 0) return "audio/mp4";
+    if (t.indexOf("ogg") >= 0) return "audio/ogg";
+    return "audio/webm";
+  }
+
+  /* Ответы, которые уже лежат в Таблице: подтягиваем их, если на этом устройстве их нет */
+  function loadFromServer() {
+    if (!endpoint() || !KEY) return Promise.resolve();
+    setSave("Загружаем ваши ответы…");
+    return post({ action: "load", key: KEY }, 45000).then(function (res) {
+      Object.keys(res.answers || {}).forEach(function (n) {
+        if (!cards[n]) return;
+        var server = String(res.answers[n]);
+        var local = state.answers[n] || "";
+        if (local === (state.sent[n] || "")) {
+          // здесь нет неотправленных правок: показываем то, что в Таблице
+          state.answers[n] = server;
+          cards[n].area.value = server;
+          grow(cards[n].area);
+        }
+        state.sent[n] = server;
+      });
+      Object.keys(res.voices || {}).forEach(function (n) {
+        if (!cards[n]) return;
+        var list = state.voices[n] || [];
+        while (list.length < res.voices[n]) list.push({});
+        state.voices[n] = list;
+        if (!drafts[n] && (!active || String(active.n) !== n)) idleVoice(Number(n));
+        if (!cards[n].status.textContent) showSavedVoices(Number(n));
+      });
+      persist();
+      updateProgress();
+      setSave("Ваши ответы на месте");
+    }).catch(function () { setSave(""); });
   }
 
   /* Отправляем по одному: сначала голосовые, потом изменённые тексты */
@@ -185,14 +295,27 @@
     if (job) {
       sending = true;
       setStatus(job.n, "Сохраняем запись…");
-      post({ action: "voice", n: job.n, mime: job.mime, audio: job.audio, seconds: job.seconds }, 180000).then(function () {
+      toBase64(job.blob).then(function (audio) {
+        return post({ action: "voice", n: job.n, mime: job.mime, audio: audio, seconds: job.seconds }, 240000);
+      }).then(function () {
         voiceQueue.shift();
+        forgetAudio(job.id);
         (state.voices[job.n] = state.voices[job.n] || []).push({ seconds: job.seconds, at: Date.now() });
         persist();
         updateProgress();
+        if (!active || active.n !== job.n) idleVoice(job.n);
         setStatus(job.n, "Запись сохранена. Голосовых ответов: " + state.voices[job.n].length);
         next();
-      }, function () { fail(job.n, "Запись пока не отправилась, пробуем ещё раз. Не закрывайте страницу."); });
+      }, function (err) {
+        if (err && err.server) {
+          voiceQueue.shift();
+          forgetAudio(job.id);
+          setStatus(job.n, "Запись не сохранилась. Попробуйте записать короче или ответьте текстом.", true);
+          next();
+          return;
+        }
+        fail(job.n, "Запись пока не отправилась, пробуем ещё раз. Она сохранена на этом устройстве и не пропадёт.");
+      });
       return;
     }
     var n = dirtyText();
@@ -242,10 +365,17 @@
 
   function start(n) {
     if (active) { stop(); return; }
+    if (drafts[n]) { forgetAudio(drafts[n]); delete drafts[n]; }
     setStatus(n, "Разрешите доступ к микрофону, если браузер спросит.");
     navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
       var mime = pickMime();
-      var rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+      // 32 кбит/с хватает для голоса, а файл в 4 раза легче: телефону проще его отправить
+      var rec;
+      try {
+        rec = new MediaRecorder(stream, mime ? { mimeType: mime, audioBitsPerSecond: 32000 } : { audioBitsPerSecond: 32000 });
+      } catch (e) {
+        rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+      }
       var chunks = [];
       active = { n: n, rec: rec, stream: stream, seconds: 0 };
       rec.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
@@ -254,10 +384,11 @@
         stream.getTracks().forEach(function (track) { track.stop(); });
         clearInterval(active && active.tick);
         active = null;
-        var type = (rec.mimeType || mime || "audio/webm").split(";")[0];
+        var type = audioType(rec.mimeType || mime);
         review(n, new Blob(chunks, { type: type }), type, seconds);
       };
-      rec.start(1000);
+      // Без нарезки на куски: на iPhone склейка кусков даёт битый файл
+      rec.start();
       setStatus(n, "");
       recordingView(n);
     }, function (err) {
@@ -282,38 +413,50 @@
   function stop() {
     if (active && active.rec.state !== "inactive") active.rec.stop();
   }
-  function review(n, blob, mime, seconds) {
+  function review(n, blob, mime, seconds, id) {
     clearVoice(n);
     if (!blob.size) {
       setStatus(n, "Запись получилась пустой. Попробуйте ещё раз.", true);
       idleVoice(n);
       return;
     }
+    if (!id) {
+      // Сразу кладём запись на устройство: если страница перезагрузится до «Сохранить», она не пропадёт
+      id = Date.now() + "-" + n;
+      rememberAudio({ id: id, n: n, mime: mime, seconds: seconds, blob: blob, draft: true });
+    }
+    drafts[n] = id;
     var url = URL.createObjectURL(blob);
     var player = el("audio");
     player.controls = true;
     player.src = url;
     var box = cards[n].voice;
     box.appendChild(player);
-    box.appendChild(button("Сохранить запись", "btn--main", function () { keep(n, blob, mime, seconds, url); }));
-    box.appendChild(button("Записать заново", "", function () { URL.revokeObjectURL(url); setStatus(n, ""); idleVoice(n); }));
+    box.appendChild(button("Сохранить запись", "btn--main", function () { keep(n, blob, mime, seconds, url, id); }));
+    box.appendChild(button("Записать заново", "", function () {
+      URL.revokeObjectURL(url);
+      forgetAudio(id);
+      delete drafts[n];
+      setStatus(n, "");
+      idleVoice(n);
+    }));
     setStatus(n, "Послушайте и сохраните, если всё хорошо. Запись длится " + clock(seconds) + ".");
   }
-  function keep(n, blob, mime, seconds, url) {
+  function keep(n, blob, mime, seconds, url, id) {
     if (!endpoint()) {
       setStatus(n, "Отправка пока не подключена, запись не сохранилась.", true);
       return;
     }
-    var reader = new FileReader();
-    reader.onload = function () {
-      voiceQueue.push({ n: n, mime: mime, seconds: seconds, audio: String(reader.result).split(",")[1] });
-      URL.revokeObjectURL(url);
-      idleVoice(n);
-      setStatus(n, "Сохраняем запись…");
+    var job = { id: id || Date.now() + "-" + n, n: n, mime: mime, seconds: seconds, blob: blob };
+    delete drafts[n];
+    URL.revokeObjectURL(url);
+    idleVoice(n);
+    setStatus(n, "Сохраняем запись…");
+    // Сначала кладём запись на устройство, потом отправляем: если страница перезагрузится, она уйдёт при следующем открытии
+    rememberAudio(job).then(function () {
+      voiceQueue.push(job);
       pump();
-    };
-    reader.onerror = function () { setStatus(n, "Не получилось прочитать запись. Попробуйте ещё раз.", true); };
-    reader.readAsDataURL(blob);
+    });
   }
 
   /* ---------- Готово ---------- */
@@ -348,5 +491,7 @@
   });
 
   render();
-  if (endpoint() && dirtyText()) pump();
+  restoreAudio().then(loadFromServer).then(function () {
+    if (endpoint() && (dirtyText() || voiceQueue.length)) pump();
+  });
 })();
