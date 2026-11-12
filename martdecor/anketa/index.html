@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Бриф на сайт: МАРТдекор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="anketa.css">
+</head>
+<body>
+
+<header class="intro">
+  <div class="wrap">
+    <p class="kicker">Бриф на&nbsp;сайт</p>
+    <h1>Людмила, расскажите о&nbsp;салоне так, как&nbsp;вам удобно</h1>
+    <p class="lead">Отвечайте текстом или&nbsp;голосом, коротко или&nbsp;подробно. Если вопрос не&nbsp;про&nbsp;вас, пропустите его. Всё сохраняется само, можно закрыть страницу и&nbsp;вернуться позже.</p>
+    <p class="lead lead--small">Фото и&nbsp;документы пришлите ссылкой на&nbsp;папку прямо в&nbsp;ответе или&nbsp;в&nbsp;личные сообщения. <a href="https://valeri-bel.github.io/prototipy/martdecor/" target="_blank" rel="noopener">Открыть прототип сайта</a></p>
+  </div>
+</header>
+
+<div class="bar" id="bar">
+  <div class="wrap bar__in">
+    <span id="progress-label">Заполнено 0</span>
+    <span class="bar__save" id="save-label" role="status" aria-live="polite"></span>
+  </div>
+  <div class="bar__track"><div class="bar__fill" id="progress-fill"></div></div>
+</div>
+
+<main class="wrap" id="form"></main>
+
+<section class="wrap finish" id="finish">
+  <h2>Всё, что&nbsp;могли, рассказали?</h2>
+  <p>Нажмите кнопку, и&nbsp;Валерия увидит, что&nbsp;бриф готов. Потом всё равно можно вернуться и&nbsp;дополнить ответы.</p>
+  <button class="btn btn--main" type="button" id="done">Готово, отправить</button>
+  <p class="finish__msg" id="done-msg" role="status" aria-live="polite"></p>
+</section>
+
+<footer class="foot">
+  <div class="wrap">Бриф подготовила Валерия Белецкая. Ответы видит только Валерия, они нужны для&nbsp;создания сайта.</div>
+</footer>
+
+<script src="../js/typo.js"></script>
+<script src="questions.js"></script>
+<script src="config.js"></script>
+<script src="anketa.js"></script>
+</body>
+</html>
