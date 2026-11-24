@@ -104,11 +104,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .pains-note { margin-top: 36px; color: var(--muted); max-width: 680px; }
 
 /* Форматы */
-.formats { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; }
+.formats { display: grid; grid-template-columns: 1fr 1.15fr; gap: 24px; }
 .format { display: flex; flex-direction: column; gap: 14px; padding: 36px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; transition: transform .25s, box-shadow .25s; }
 .format:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(27, 34, 51, .1); }
 .format--wide { grid-column: 1 / -1; }
-.format--lead { grid-row: span 4; background: var(--night); color: var(--on-night); border-color: transparent; justify-content: space-between; padding: 44px; }
+.format--lead { grid-column: 2; grid-row: 1 / span 4; background: var(--night); color: var(--on-night); border-color: transparent; justify-content: space-between; padding: 44px; }
 .format--lead h3 { font-size: 38px; }
 .format--lead .format__text { color: var(--on-night-muted); font-size: 19px; }
 .format__text { color: var(--muted); }
@@ -241,7 +241,7 @@ details p { padding: 0 0 24px; color: var(--muted); max-width: 640px; }
   .hero__in, .when, .about, .faq, .book, .formats { grid-template-columns: 1fr; gap: 40px; }
   .hero__in { min-height: 0; }
   .portrait { max-width: 480px; margin-inline: auto; width: 100%; }
-  .format--lead { grid-row: auto; }
+  .format--lead { grid-column: auto; grid-row: auto; }
   .steps { grid-template-columns: 1fr 1fr; }
   .steps::before { display: none; }
   .reviews { columns: 2; }
@@ -284,3 +284,10 @@ details p { padding: 0 0 24px; color: var(--muted); max-width: 640px; }
   .contacts a { font-size: 22px; }
   summary { font-size: 19px; }
 }
+
+/* Замечания Юли: доказательство на первом экране, статусы форматов */
+.hero__proof { margin-top: 18px; font-size: 15px; color: var(--on-night-muted); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.format--lead .format__tag { color: var(--blush); }
+.format--soon { opacity: .8; }
+.format--soon .format__tag { color: #5e5a60; }
+@media (min-width: 1041px) { .format--lead .format__img { flex: 1 1 auto; min-height: 260px; max-height: none; } }
