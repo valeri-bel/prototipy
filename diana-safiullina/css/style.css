@@ -319,4 +319,4 @@ h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 600; letter
 .arrow:disabled { opacity: .35; cursor: default; }
 
 /* «Обо мне»: видео за работой под портретом */
-.about__video { display: block; width: 100%; height: auto; aspect-ratio: 576 / 608; object-fit: cover; margin-top: 20px; border-radius: 14px; background: var(--night); }
+.about__video { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 200px 200px 14px 14px; background: var(--night); }
