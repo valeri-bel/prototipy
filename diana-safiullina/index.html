@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Диана Сафиуллина: телесная терапия</title>
-<meta name="description" content="Прототип сайта Дианы Сафиуллиной: телесная терапия, онлайн-консультации и открытые встречи.">
+<title>Диана Сафиуллина: телесно-ориентированная психотерапия</title>
+<meta name="description" content="Прототип сайта Дианы Сафиуллиной: телесно-ориентированная психотерапия вживую в Москве, Казани, Уфе, Альметьевске и Дубае и онлайн.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,9 +17,10 @@
   <div class="wrap top__in">
     <a class="logo" href="#top">Диана Сафиуллина</a>
     <nav class="nav" aria-label="Разделы">
+      <a href="#dates">Даты</a>
       <a href="#requests">С&nbsp;чем&nbsp;приходят</a>
       <a href="#formats">Форматы</a>
-      <a href="#dates">Даты</a>
+      <a href="#how">Как&nbsp;проходит</a>
       <a href="#about">Обо&nbsp;мне</a>
       <a href="#faq">Вопросы</a>
     </nav>
@@ -32,17 +33,17 @@
 <section class="hero">
   <div class="wrap hero__in">
     <div>
-      <p class="kicker">От&nbsp;сердца к&nbsp;сердцу</p>
-      <h1>Телесная терапия для&nbsp;тех, кто устал ходить по&nbsp;кругу</h1>
-      <p class="hero__lead">Через&nbsp;тело находим, где&nbsp;застряло напряжение, и&nbsp;разбираемся, какие обстоятельства его&nbsp;сформировали. Вживую, когда&nbsp;я&nbsp;приезжаю в&nbsp;ваш&nbsp;город, или&nbsp;онлайн из&nbsp;любой точки мира.</p>
+      <p class="kicker">Телесно-ориентированная психотерапия</p>
+      <h1>Для&nbsp;тех, кто устал ходить по&nbsp;кругу</h1>
+      <p class="hero__lead">Через&nbsp;тело находим, где&nbsp;застряло напряжение, и&nbsp;разбираемся, какие обстоятельства его&nbsp;сформировали. Вживую, когда&nbsp;я&nbsp;приезжаю в&nbsp;Москву, Казань, Уфу, Альметьевск и&nbsp;Дубай, или&nbsp;онлайн из&nbsp;любой точки мира.</p>
       <div class="hero__cta">
-        <a class="btn btn--main" href="#book">Записаться на&nbsp;встречу</a>
+        <a class="btn btn--main" href="#dates">Даты приездов</a>
         <a class="btn btn--ghost" href="#match">Подобрать формат</a>
       </div>
       <dl class="facts">
-        <div><dt>Живые встречи</dt><dd>Альметьевск и&nbsp;Казань, по&nbsp;датам</dd></div>
-        <div><dt>Онлайн</dt><dd>Из&nbsp;любой точки мира</dd></div>
-        <div><dt>Открытая встреча</dt><dd>1000&nbsp;₽, общая практика</dd></div>
+        <div><dt>Живые встречи</dt><dd>Москва, Казань, Уфа, Альметьевск, Дубай</dd></div>
+        <div><dt>Одна встреча</dt><dd>1,5–2&nbsp;часа, онлайн 2&nbsp;часа</dd></div>
+        <div><dt>Начать можно</dt><dd>С&nbsp;открытой встречи за&nbsp;1000&nbsp;₽</dd></div>
       </dl>
     </div>
     <div class="portrait">
@@ -52,7 +53,58 @@
         <circle cx="200" cy="200" r="178"/>
         <circle cx="200" cy="200" r="196"/>
       </svg>
-      <div class="photo photo--real"><img src="img/portrait.jpg" alt="Портрет" width="853" height="1280"></div>
+      <div class="photo photo--real"><img src="img/hero.jpg" alt="Диана Сафиуллина" width="960" height="1200"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--night section--seam" id="dates">
+  <div class="wrap when reveal">
+    <div>
+      <div class="head">
+        <p class="kicker">Даты</p>
+        <h2>Когда&nbsp;я&nbsp;в&nbsp;вашем городе</h2>
+        <p>Даты приездов появляются здесь примерно за&nbsp;месяц. Запись в&nbsp;каждом городе открыта несколько дней. Адрес присылаю после записи.</p>
+      </div>
+      <p class="when__hint">Нажмите «Сообщить о&nbsp;дате» у&nbsp;своего города, и&nbsp;вы&nbsp;узнаете о&nbsp;приезде первыми.</p>
+      <span class="need">Нужно от&nbsp;вас: даты приездов на&nbsp;2027 год</span>
+    </div>
+    <div>
+      <ul id="schedule" class="slots"></ul>
+      <ul class="slots">
+        <li class="slot slot--soon">
+          <strong class="slot__city">Москва</strong>
+          <span class="slot__date">Дата появится за&nbsp;месяц</span>
+          <a class="slot__state slot__notify" href="#book" data-format="Сообщить о новой дате" data-city="Москва">Сообщить о&nbsp;дате</a>
+        </li>
+        <li class="slot slot--soon">
+          <strong class="slot__city">Казань</strong>
+          <span class="slot__date">Дата появится за&nbsp;месяц</span>
+          <a class="slot__state slot__notify" href="#book" data-format="Сообщить о новой дате" data-city="Казань">Сообщить о&nbsp;дате</a>
+        </li>
+        <li class="slot slot--soon">
+          <strong class="slot__city">Уфа</strong>
+          <span class="slot__date">Дата появится за&nbsp;месяц</span>
+          <a class="slot__state slot__notify" href="#book" data-format="Сообщить о новой дате" data-city="Уфа">Сообщить о&nbsp;дате</a>
+        </li>
+        <li class="slot slot--soon">
+          <strong class="slot__city">Альметьевск</strong>
+          <span class="slot__date">Следующая запись в&nbsp;2027 году</span>
+          <span class="slot__note">Последний приезд: 2–8 ноября 2026</span>
+          <a class="slot__state slot__notify" href="#book" data-format="Сообщить о новой дате" data-city="Альметьевск">Сообщить о&nbsp;дате</a>
+        </li>
+        <li class="slot slot--soon">
+          <strong class="slot__city">Дубай</strong>
+          <span class="slot__date">Дата появится за&nbsp;месяц</span>
+          <a class="slot__state slot__notify" href="#book" data-format="Сообщить о новой дате" data-city="Дубай">Сообщить о&nbsp;дате</a>
+        </li>
+        <li class="slot slot--online">
+          <strong class="slot__city">Онлайн</strong>
+          <span class="slot__date">Телемост или&nbsp;Zoom, 2&nbsp;часа</span>
+          <span class="slot__note">Личная консультация по&nbsp;договорённости</span>
+          <a class="slot__state" href="#book" data-format="Онлайн-консультация" data-city="Другой город">Записаться</a>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -65,13 +117,15 @@
     </div>
     <ul class="pains">
       <li>Одни и&nbsp;те&nbsp;же ситуации повторяются, меняются только декорации</li>
-      <li>В&nbsp;теле постоянное напряжение, и&nbsp;расслабиться не&nbsp;получается</li>
+      <li>В&nbsp;теле напряжение, потому что&nbsp;внутри одно, а&nbsp;живёте по-другому</li>
+      <li>Потерялись смыслы, и&nbsp;непонятно, ради чего всё</li>
+      <li>Хочется наконец честно ответить себе, чего&nbsp;вы&nbsp;хотите</li>
       <li>Страшно довериться своему решению, сомнения крутятся по&nbsp;кругу</li>
       <li>Не&nbsp;получается отпустить человека, обиду или&nbsp;событие</li>
       <li>Всем с&nbsp;вами удобно, а&nbsp;на&nbsp;себя сил уже&nbsp;не&nbsp;остаётся</li>
       <li>Задуманное не&nbsp;складывается, и&nbsp;непонятно, что&nbsp;мешает</li>
     </ul>
-    <p class="pains-note">Темы открытых встреч подбираются по&nbsp;самому частому вопросу подписчиков канала. Этим летом это&nbsp;были желания, доверие к&nbsp;своим выборам и&nbsp;умение отпускать.</p>
+    <p class="pains-note">Работаю со&nbsp;всеми, кто готов посмотреть на&nbsp;свою ситуацию и&nbsp;что-то в&nbsp;ней поменять. Темы открытых встреч подбираю по&nbsp;самому частому вопросу подписчиков канала.</p>
   </div>
 </section>
 
@@ -84,35 +138,46 @@
     <div class="formats">
       <article class="format format--lead">
         <div>
-          <h3>Телесная терапия</h3>
-          <p class="format__text" style="margin-top:16px">Живая встреча и&nbsp;работа руками. Тело показывает, где&nbsp;накопилось напряжение, а&nbsp;дальше мы&nbsp;вместе смотрим на&nbsp;обстоятельства, которые его&nbsp;создали.</p>
+          <h3>Живая встреча</h3>
+          <p class="format__text" style="margin-top:16px">Встреча и&nbsp;работа руками. Тело показывает, где&nbsp;накопилось напряжение, а&nbsp;дальше мы&nbsp;вместе смотрим на&nbsp;обстоятельства, которые его&nbsp;создали.</p>
         </div>
         <ul>
-          <li>Индивидуальный приём в&nbsp;дни выезда</li>
-          <li>Бывает, что&nbsp;приходят одной линией рода: мама, дочь, бабушка</li>
-          <li>Даты в&nbsp;городах ограничены и&nbsp;объявляются заранее</li>
+          <li>1,5–2&nbsp;часа, индивидуально</li>
+          <li>В&nbsp;дни приезда в&nbsp;Москву, Казань, Уфу, Альметьевск и&nbsp;Дубай</li>
+          <li>Можно прийти с&nbsp;близкими: с&nbsp;каждым я&nbsp;работаю отдельно</li>
         </ul>
-        <div class="format__meta">
-          <span class="need">Нужно от&nbsp;вас: цена и&nbsp;длительность</span>
-          <a class="btn btn--main" href="#book" data-format="Телесная терапия">Записаться</a>
-        </div>
-      </article>
-
-      <article class="format">
-        <h3>Консультация онлайн</h3>
-        <p class="format__text">Личная встреча онлайн, если&nbsp;вы&nbsp;в&nbsp;другом городе или&nbsp;хотите разобрать конкретную ситуацию.</p>
+        <img class="format__img" src="img/touch.jpg" alt="" width="1000" height="800" loading="lazy">
         <div class="format__meta">
           <span class="need">Нужно от&nbsp;вас: цена</span>
-          <a class="link" href="#book" data-format="Консультация онлайн">Выбрать</a>
+          <a class="btn btn--main" href="#book" data-format="Живая встреча">Записаться</a>
         </div>
       </article>
 
       <article class="format">
+        <span class="format__tag">Чтобы начать</span>
         <h3>Открытая онлайн-встреча</h3>
-        <p class="format__text">Одна тема, разбор вопросов и&nbsp;общая практика в&nbsp;конце. Ссылку присылают после&nbsp;сообщения.</p>
+        <p class="format__text">Одна тема, разбор вопросов и&nbsp;общая практика в&nbsp;конце. Подходит, чтобы&nbsp;присмотреться из&nbsp;любого города.</p>
         <div class="format__meta">
           <span class="price">1000&nbsp;₽</span>
           <a class="link" href="#book" data-format="Открытая онлайн-встреча">Хочу на&nbsp;следующую</a>
+        </div>
+      </article>
+
+      <article class="format">
+        <h3>Онлайн-консультация</h3>
+        <p class="format__text">Личная встреча на&nbsp;2&nbsp;часа в&nbsp;Телемосте или&nbsp;Zoom, если&nbsp;вы&nbsp;в&nbsp;другом городе или&nbsp;хотите разобрать конкретную ситуацию.</p>
+        <div class="format__meta">
+          <span class="need">Нужно от&nbsp;вас: цена</span>
+          <a class="link" href="#book" data-format="Онлайн-консультация">Выбрать</a>
+        </div>
+      </article>
+
+      <article class="format">
+        <h3>Встреча для&nbsp;пары</h3>
+        <p class="format__text">Для&nbsp;двоих, которые вместе разбираются в&nbsp;общем вопросе. Чаще всего это&nbsp;мужчина и&nbsp;женщина.</p>
+        <div class="format__meta">
+          <span class="price">10&nbsp;000&nbsp;₽</span>
+          <a class="link" href="#book" data-format="Встреча для пары">Записаться вдвоём</a>
         </div>
       </article>
 
@@ -124,45 +189,6 @@
           <a class="link" href="#book" data-format="Женский ретрит">Узнать о&nbsp;следующем</a>
         </div>
       </article>
-
-      <article class="format format--wide">
-        <h3>Идея: авторская памятка</h3>
-        <p class="format__text">Небольшая платная книга по&nbsp;темам, которые вы&nbsp;уже&nbsp;разбираете в&nbsp;канале: отношения, доверие к&nbsp;себе и&nbsp;программирование своей реальности. Можно купить из&nbsp;любого города и&nbsp;прочитать в&nbsp;своём темпе.</p>
-        <div class="format__meta">
-          <span class="need">Нужно от&nbsp;вас: тема, текст и&nbsp;цена</span>
-          <a class="link" href="#book" data-format="Памятка">Узнать о&nbsp;выходе</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--night" id="dates">
-  <div class="wrap when reveal">
-    <div>
-      <div class="head">
-        <p class="kicker">Даты</p>
-        <h2>Когда&nbsp;я&nbsp;рядом с&nbsp;вашим городом</h2>
-        <p>Записи в&nbsp;городах открываются на&nbsp;несколько дней. Оставьте контакт, и&nbsp;о&nbsp;новой дате вы&nbsp;узнаете первыми.</p>
-      </div>
-      <a class="btn btn--main" href="#book">Сообщить о&nbsp;новой дате</a>
-    </div>
-    <div>
-      <ul id="schedule"></ul>
-      <ul>
-        <li class="slot slot--soon">
-          <strong class="slot__city">Казань</strong>
-          <span class="slot__date">Дата уточняется</span>
-          <span class="slot__note">Нужно от&nbsp;вас: ближайшие даты</span>
-          <span class="slot__state">Скоро</span>
-        </li>
-        <li class="slot slot--online">
-          <strong class="slot__city">Онлайн</strong>
-          <span class="slot__date">Любая точка мира</span>
-          <span class="slot__note">Личная консультация по&nbsp;договорённости</span>
-          <span class="slot__state">Можно записаться</span>
-        </li>
-      </ul>
     </div>
   </div>
 </section>
@@ -178,9 +204,12 @@
       <fieldset>
         <legend>Где&nbsp;вы&nbsp;сейчас?</legend>
         <div class="choices">
-          <button class="choice" type="button" data-q="place" data-a="alm" aria-pressed="false">Альметьевск</button>
-          <button class="choice" type="button" data-q="place" data-a="kzn" aria-pressed="false">Казань</button>
-          <button class="choice" type="button" data-q="place" data-a="other" aria-pressed="false">Другой город</button>
+          <button class="choice" type="button" data-q="place" data-a="Москва" aria-pressed="false">Москва</button>
+          <button class="choice" type="button" data-q="place" data-a="Казань" aria-pressed="false">Казань</button>
+          <button class="choice" type="button" data-q="place" data-a="Уфа" aria-pressed="false">Уфа</button>
+          <button class="choice" type="button" data-q="place" data-a="Альметьевск" aria-pressed="false">Альметьевск</button>
+          <button class="choice" type="button" data-q="place" data-a="Дубай" aria-pressed="false">Дубай</button>
+          <button class="choice" type="button" data-q="place" data-a="Другой город" aria-pressed="false">Другой город</button>
         </div>
       </fieldset>
       <fieldset>
@@ -188,6 +217,7 @@
         <div class="choices">
           <button class="choice" type="button" data-q="need" data-a="body" aria-pressed="false">Напряжение в&nbsp;теле</button>
           <button class="choice" type="button" data-q="need" data-a="talk" aria-pressed="false">Разобрать ситуацию</button>
+          <button class="choice" type="button" data-q="need" data-a="pair" aria-pressed="false">Вопрос в&nbsp;паре</button>
           <button class="choice" type="button" data-q="need" data-a="look" aria-pressed="false">Сначала присмотреться</button>
         </div>
       </fieldset>
@@ -202,34 +232,43 @@
   </div>
 </section>
 
-<section class="section section--tint">
+<section class="section section--tint" id="how">
   <div class="wrap reveal">
-    <div class="head">
+    <div class="head head--wide">
       <p class="kicker">Как&nbsp;это&nbsp;устроено</p>
-      <h2>От&nbsp;первого сообщения до&nbsp;встречи</h2>
+      <h2>Метод и&nbsp;путь от&nbsp;сообщения до&nbsp;встречи</h2>
+      <p>Я&nbsp;работаю в&nbsp;телесно-ориентированном подходе и&nbsp;опираюсь на&nbsp;идеи Вильгельма Райха. Непрожитые чувства и&nbsp;привычные способы защищаться остаются в&nbsp;теле мышечным напряжением. Через&nbsp;тело мы&nbsp;находим это&nbsp;напряжение, а&nbsp;в&nbsp;разговоре понимаем, откуда оно&nbsp;взялось. Осознать мало: важно, чтобы&nbsp;тело это&nbsp;прожило.</p>
     </div>
+    <figure class="work">
+      <img src="img/work.jpg" alt="Диана во время сессии: работа руками с плечами и шеей клиентки" width="1400" height="1050" loading="lazy">
+      <figcaption>Живая встреча: работа через&nbsp;тело</figcaption>
+    </figure>
     <ol class="steps">
       <li class="step"><span class="step__n">1</span><h3>Вы&nbsp;пишете</h3><p>В&nbsp;Telegram или&nbsp;по&nbsp;телефону, в&nbsp;свободной форме.</p></li>
-      <li class="step"><span class="step__n">2</span><h3>Выбираем время</h3><p>Договариваемся о&nbsp;формате и&nbsp;ближайшей дате в&nbsp;вашем городе или&nbsp;онлайн.</p></li>
-      <li class="step"><span class="step__n">3</span><h3>Встреча</h3><p>Находим телесный зажим, проживаем его&nbsp;и&nbsp;смотрим, что&nbsp;его&nbsp;сформировало.</p></li>
+      <li class="step"><span class="step__n">2</span><h3>Выбираем время</h3><p>Договариваемся о&nbsp;формате и&nbsp;дате в&nbsp;вашем городе или&nbsp;онлайн. Адрес присылаю после записи.</p></li>
+      <li class="step"><span class="step__n">3</span><h3>Встреча</h3><p>1,5–2&nbsp;часа. Находим телесный зажим, проживаем его&nbsp;и&nbsp;смотрим, что&nbsp;его&nbsp;сформировало.</p></li>
       <li class="step"><span class="step__n">4</span><h3>После</h3><p>Встречая прежнюю ситуацию, вы&nbsp;можете отреагировать на&nbsp;неё иначе.</p></li>
     </ol>
-    <p class="steps-note"><span class="need">Нужно от&nbsp;вас: как&nbsp;готовиться к&nbsp;встрече и&nbsp;что&nbsp;важно знать заранее</span></p>
+    <p class="steps-note"><span class="need">Нужно от&nbsp;вас: сколько встреч обычно нужно</span></p>
   </div>
 </section>
 
 <section class="section" id="about">
   <div class="wrap about reveal">
-    <div class="photo">Диана за&nbsp;работой<br>Нужен кадр из&nbsp;кабинета или&nbsp;с&nbsp;ретрита</div>
+    <div class="about__media">
+      <img class="about__img" src="img/about.jpg" alt="Диана Сафиуллина" width="960" height="1200" loading="lazy">
+    </div>
     <div>
       <p class="kicker">Обо&nbsp;мне</p>
       <h2>Диана Сафиуллина</h2>
-      <p>Я&nbsp;смотрю на&nbsp;тело как&nbsp;на&nbsp;единый механизм, который защищает психику. Мне важно понять жизненный путь человека и&nbsp;то,&nbsp;на&nbsp;чём он&nbsp;остановился.</p>
-      <p>Больше года я&nbsp;веду канал «От&nbsp;сердца к&nbsp;сердцу», провожу открытые встречи онлайн и&nbsp;приезжаю на&nbsp;приёмы в&nbsp;Альметьевск и&nbsp;Казань.</p>
-      <blockquote>«Жизнь безопасна, я&nbsp;готов слышать свои желания»</blockquote>
+      <div id="about-text">
+        <p>До&nbsp;телесной терапии я&nbsp;работала учителем в&nbsp;частной школе. Дети научили меня главному: объяснить тему мало, её&nbsp;нужно прорешать много раз, и&nbsp;тогда знание становится своим. С&nbsp;психикой так&nbsp;же: осознать мало, нужно прожить.</p>
+        <p>Я&nbsp;проводила для&nbsp;женщин тренинги и&nbsp;игры с&nbsp;метафорическими картами и&nbsp;увидела, что&nbsp;одного разговора не&nbsp;хватает. Психика защищается, а&nbsp;страхи, обиды, тревога и&nbsp;недоверие остаются в&nbsp;теле. Так&nbsp;я&nbsp;пришла к&nbsp;обучению телесной терапии и&nbsp;ушла из&nbsp;школы в&nbsp;практику.</p>
+        <p>С&nbsp;2024 года работаю с&nbsp;людьми, веду канал «От&nbsp;сердца к&nbsp;сердцу», провожу открытые встречи онлайн и&nbsp;приезжаю в&nbsp;Москву, Казань, Уфу, Альметьевск и&nbsp;Дубай.</p>
+      </div>
+      <blockquote>«Нет ничего, что&nbsp;человек не&nbsp;может. Есть только то, что&nbsp;он&nbsp;считает, будто не&nbsp;может»</blockquote>
       <div class="need-row">
-        <span class="need">Нужно от&nbsp;вас: образование и&nbsp;дипломы</span>
-        <span class="need">Нужно от&nbsp;вас: стаж работы</span>
+        <span class="need">Нужно от&nbsp;вас: фото или&nbsp;сканы сертификатов о&nbsp;курсах</span>
       </div>
     </div>
   </div>
@@ -240,13 +279,35 @@
     <div class="head">
       <p class="kicker">Отзывы</p>
       <h2>Что&nbsp;говорят те,&nbsp;кто уже&nbsp;был на&nbsp;встрече</h2>
-      <p>В&nbsp;открытых источниках отзывов нет.&nbsp;Здесь появятся настоящие слова клиентов, с&nbsp;их&nbsp;согласия.</p>
+      <p>Слова клиентов из&nbsp;личных сообщений, как&nbsp;они есть. Имена не&nbsp;указываем.</p>
     </div>
     <div class="reviews">
-      <div class="review"><span>Отзыв о&nbsp;живой встрече</span><span class="need">Нужно от&nbsp;вас</span></div>
-      <div class="review"><span>Отзыв об&nbsp;онлайн-консультации</span><span class="need">Нужно от&nbsp;вас</span></div>
-      <div class="review"><span>Отзыв о&nbsp;ретрите</span><span class="need">Нужно от&nbsp;вас</span></div>
+      <figure class="review">
+        <blockquote>«Когда увидела тебя, подумала, такая молодая и&nbsp;хрупкая, и&nbsp;в&nbsp;то&nbsp;же время, мощная сила внутри и&nbsp;невероятная чистота. В&nbsp;процессе сеанса прочувствовала силу рук, что&nbsp;было для&nbsp;меня неожиданно. Такое ощущение после сеанса, как&nbsp;будто что-то очень поменялось внутри.»</blockquote>
+        <figcaption>Телесная терапия · ноябрь 2024</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>«Два дня спала, стало как-то легко и&nbsp;главное&nbsp;— ком в&nbsp;горле прошел и&nbsp;стало легче дышать. Что-то внутри меняется, как&nbsp;ты&nbsp;и&nbsp;сказала. Пытаюсь услышать себя, а&nbsp;не&nbsp;свой ум.»</blockquote>
+        <figcaption>Телесная терапия</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>«Телесная терапия&nbsp;— очень мощный инструмент. Но&nbsp;все зависит от&nbsp;того, кто&nbsp;проводит. Удивительно, но&nbsp;после чувствую обновление, силу и&nbsp;любовь к&nbsp;миру. Ты&nbsp;помогла раскрыть многие моменты и&nbsp;понять суть простых вещей.»</blockquote>
+        <figcaption>Телесная терапия</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>«Диана, внешне ты&nbsp;молоденькая хрупкая девушка! Голос тихий, сияющая улыбка… Силища и&nbsp;божественная наполненность удивили меня! Ты&nbsp;как&nbsp;будто сняла с&nbsp;меня старую изношенную, уставшую кожу, а&nbsp;новая&nbsp;— ещё чистая и&nbsp;молодая! Анализирую! Учусь заботиться о&nbsp;себе!»</blockquote>
+        <figcaption>Телесная терапия · ноябрь 2024</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>«Диана, я&nbsp;начала вновь чувствовать, я&nbsp;начала вновь делать людям добро! Я&nbsp;чувствую и&nbsp;могу ясно выразить все свои истинные эмоции по&nbsp;отношению к&nbsp;людям.»</blockquote>
+        <figcaption>Телесная терапия</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>«Благодарю, моя дорогая за&nbsp;четкое разделение, четкое разъяснение&nbsp;— за&nbsp;мои изменения, которые мне помогают жить!»</blockquote>
+        <figcaption>Отзыв из&nbsp;личных сообщений</figcaption>
+      </figure>
     </div>
+    <p class="steps-note"><span class="need">Нужно от&nbsp;вас: согласие авторов на&nbsp;публикацию, город и&nbsp;формат встречи у&nbsp;каждого отзыва</span></p>
   </div>
 </section>
 
@@ -272,26 +333,50 @@
     </div>
     <div>
       <details open>
+        <summary>Когда&nbsp;вы&nbsp;будете в&nbsp;моём городе?</summary>
+        <p>Даты приездов в&nbsp;Москву, Казань, Уфу, Альметьевск и&nbsp;Дубай публикую примерно за&nbsp;месяц. Оставьте контакт и&nbsp;город, и&nbsp;я&nbsp;напишу, как&nbsp;только откроется запись.</p>
+      </details>
+      <details>
         <summary>Я&nbsp;живу в&nbsp;другом городе. Можно поработать?</summary>
-        <p>Да,&nbsp;личная консультация проходит онлайн из&nbsp;любой точки мира. Если&nbsp;хочется живой встречи, оставьте контакт и&nbsp;город.</p>
+        <p>Да,&nbsp;онлайн-консультация идёт 2&nbsp;часа в&nbsp;Телемосте или&nbsp;Zoom из&nbsp;любой точки мира. Можно начать и&nbsp;с&nbsp;открытой онлайн-встречи за&nbsp;1000&nbsp;₽.</p>
+      </details>
+      <details>
+        <summary>Чем&nbsp;живая встреча отличается от&nbsp;консультации?</summary>
+        <p>На&nbsp;живой встрече работа идёт через&nbsp;тело и&nbsp;прикосновение, она&nbsp;длится 1,5–2&nbsp;часа. Консультация проходит онлайн и&nbsp;длится 2&nbsp;часа.</p>
+      </details>
+      <details>
+        <summary>Можно прийти вместе с&nbsp;мамой или&nbsp;партнёром?</summary>
+        <p>Родственников можно привести, но&nbsp;с&nbsp;каждым я&nbsp;работаю отдельно. Если&nbsp;вы&nbsp;пара и&nbsp;хотите вместе разобраться в&nbsp;общем вопросе, есть встреча для&nbsp;двоих за&nbsp;10&nbsp;000&nbsp;₽.</p>
+      </details>
+      <details>
+        <summary>Я&nbsp;принимаю антидепрессанты. Что&nbsp;важно знать?</summary>
+        <p>Скажите об&nbsp;этом заранее, при&nbsp;записи. Психотропные препараты важно учитывать в&nbsp;работе.</p>
       </details>
       <details>
         <summary>Как&nbsp;попасть на&nbsp;открытую встречу?</summary>
         <p>Напишите в&nbsp;личные сообщения, и&nbsp;вам пришлют ссылку. Участие стоит 1000&nbsp;₽, время указывается по&nbsp;Москве.</p>
       </details>
       <details>
-        <summary>Когда&nbsp;следующая запись в&nbsp;Альметьевске?</summary>
-        <p>Ноябрьская запись стала последней в&nbsp;этом году, следующая откроется уже&nbsp;в&nbsp;новом. Оставьте контакт, чтобы&nbsp;не&nbsp;пропустить дату.</p>
-      </details>
-      <details>
-        <summary>Чем&nbsp;живая встреча отличается от&nbsp;консультации?</summary>
-        <p>На&nbsp;живой встрече работа идёт через&nbsp;тело и&nbsp;прикосновение. Консультация проходит онлайн.</p>
-      </details>
-      <details>
         <summary>Заменяет&nbsp;ли это&nbsp;лечение?</summary>
         <p>Нет.&nbsp;Если&nbsp;у&nbsp;вас есть диагноз или&nbsp;тревожные симптомы, обратитесь к&nbsp;врачу и&nbsp;продолжайте назначенное лечение.</p>
       </details>
     </div>
+  </div>
+</section>
+
+<section class="section" id="prepare">
+  <div class="wrap reveal">
+    <div class="head">
+      <p class="kicker">Перед встречей</p>
+      <h2>Как&nbsp;подготовиться</h2>
+    </div>
+    <ul class="prep">
+      <li><b>Одежда</b><span>Свободная, не&nbsp;сковывающая движений.</span></li>
+      <li><b>Препараты</b><span>Если&nbsp;принимаете антидепрессанты или&nbsp;другие психотропные препараты, скажите об&nbsp;этом заранее.</span></li>
+      <li><b>Адрес</b><span>Пришлю после записи, вместе со&nbsp;временем встречи.</span></li>
+      <li><b>Онлайн</b><span>Телемост или&nbsp;Zoom, 2&nbsp;часа. Лучше выбрать место, где&nbsp;вас никто не&nbsp;отвлечёт.</span></li>
+    </ul>
+    <p class="steps-note"><span class="need">Нужно от&nbsp;вас: правила переноса и&nbsp;отмены, если&nbsp;решите их&nbsp;ввести</span></p>
   </div>
 </section>
 
@@ -304,6 +389,7 @@
         <a href="https://t.me/doyana_s" target="_blank" rel="noopener"><span>Telegram</span>@doyana_s</a>
         <a href="tel:+79655956890"><span>Телефон</span>+7&nbsp;965&nbsp;595&nbsp;68&nbsp;90</a>
       </div>
+      <img class="book__img" src="img/moon.jpg" alt="" width="900" height="1350" loading="lazy">
     </div>
     <div>
       <form class="lead" id="lead">
@@ -315,17 +401,21 @@
         </label>
         <label>Формат
           <select id="format" name="format">
-            <option>Телесная терапия</option>
-            <option>Консультация онлайн</option>
+            <option>Живая встреча</option>
+            <option>Онлайн-консультация</option>
             <option>Открытая онлайн-встреча</option>
+            <option>Встреча для пары</option>
             <option>Женский ретрит</option>
-            <option>Памятка</option>
+            <option>Сообщить о новой дате</option>
           </select>
         </label>
         <label>Город
           <select id="city" name="city">
-            <option>Альметьевск</option>
+            <option>Москва</option>
             <option>Казань</option>
+            <option>Уфа</option>
+            <option>Альметьевск</option>
+            <option>Дубай</option>
             <option>Другой город</option>
           </select>
         </label>
@@ -345,10 +435,10 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <div>
-      <p class="foot__note">Телесная терапия не&nbsp;заменяет медицинскую помощь.</p>
+      <p class="foot__note">Телесно-ориентированная психотерапия не&nbsp;заменяет медицинскую помощь.</p>
       <p>Telegram: <a href="https://t.me/doyana_ss" target="_blank" rel="noopener">канал</a>. <a href="https://www.instagram.com/doyana_s/" target="_blank" rel="noopener">Instagram</a>.</p>
     </div>
-    <p>Прототип подготовила Валерия Белецкая. Часть фотографий&nbsp;— заглушки, формы не&nbsp;отправляются, данные взяты из&nbsp;открытых страниц Дианы на&nbsp;8 ноября 2026 года.</p>
+    <p>Прототип подготовила Валерия Белецкая. Фотографии Дианы, формы не&nbsp;отправляются. Данные взяты из&nbsp;открытых страниц Дианы и&nbsp;её&nbsp;ответов в&nbsp;брифе, ноябрь 2026 года.</p>
   </div>
 </footer>
 

@@ -10,6 +10,7 @@
       var to = new Date(row.to + "T23:59:59");
       var from = new Date(row.from + "T00:00:00");
       var state = to < today ? "past" : from <= new Date() ? "now" : "soon";
+      if (state === "past") return;
       var word = { past: "Прошло", now: "Идёт приём", soon: "Открыта запись" }[state];
       var li = document.createElement("li");
       li.className = "slot slot--" + state;
@@ -45,8 +46,9 @@
     var need = answers.need;
     if (!place || !need) return null;
     if (need === "look") return "meeting";
+    if (need === "pair") return "pair";
     if (need === "talk") return "online";
-    return place === "other" ? "online" : "live";
+    return place === "Другой город" ? "online" : "live";
   }
 
   function setFormat(name) {
@@ -77,7 +79,7 @@
       document.getElementById("result-text").textContent = t(res.text);
       var go = document.getElementById("result-go");
       go.dataset.format = res.format;
-      go.dataset.city = answers.place === "alm" ? "Альметьевск" : answers.place === "kzn" ? "Казань" : "Другой город";
+      go.dataset.city = answers.place;
     });
   }
 
