@@ -303,3 +303,4 @@ h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 600; letter
 .slot__date { font-family: var(--display); font-weight: 400; font-size: 18px; }
 .slot__state { width: 11.5rem; text-align: center; padding: 9px 13px; }
 @media (max-width: 680px) { .slot__state { width: 10.5rem; } }
+.format__ask { font-size: 15px; color: var(--on-night-muted); }
