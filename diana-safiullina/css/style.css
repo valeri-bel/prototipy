@@ -317,3 +317,6 @@ h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 600; letter
 .arrow { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--blush-deep); background: var(--paper); color: var(--blush-deep); font: 400 22px/1 var(--sans); cursor: pointer; transition: background .2s, color .2s, opacity .2s; }
 .arrow:hover:not(:disabled) { background: var(--blush-deep); color: var(--paper); }
 .arrow:disabled { opacity: .35; cursor: default; }
+
+/* «Обо мне»: видео за работой под портретом */
+.about__video { display: block; width: 100%; height: auto; aspect-ratio: 576 / 608; object-fit: cover; margin-top: 20px; border-radius: 14px; background: var(--night); }
