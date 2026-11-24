@@ -295,3 +295,11 @@ details p { padding: 0 0 24px; color: var(--muted); max-width: 640px; }
 
 /* Большие заголовки: Jost (Google Fonts, лицензия OFL) */
 h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 600; letter-spacing: -.01em; }
+
+/* Тонкая вторая кнопка на первом экране, как текст под заголовком */
+.hero .btn--ghost { font-weight: 400; }
+/* Блок дат: города и даты — Jost, кнопки одной ширины */
+.slot__city { font: 500 24px/1.1 var(--display); letter-spacing: 0; }
+.slot__date { font-family: var(--display); font-weight: 400; font-size: 18px; }
+.slot__state { width: 11.5rem; text-align: center; padding: 9px 13px; }
+@media (max-width: 680px) { .slot__state { width: 10.5rem; } }
