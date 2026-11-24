@@ -1,5 +1,3 @@
-@font-face { font-family: "Circe"; src: url("../fonts/circe-regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Circe"; src: url("../fonts/circe-bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 /* Палитра — из аватара и карточек канала: ночной синий и тёплый телесный. Диане она понравилась (бриф, №8) */
 :root {
   --night: #0c1322;
@@ -14,7 +12,7 @@
   --on-night-muted: #bcb5b5;
   --line: rgba(27, 34, 51, .16);
   --line-night: rgba(246, 236, 226, .2);
-  --display: "Circe", "Onest", Arial, sans-serif; /* большие заголовки */
+  --display: "Jost", "Onest", Arial, sans-serif; /* большие заголовки: бесплатная замена Circe */
   --serif: "Onest", "Manrope", Arial, sans-serif; /* по брифу: «простые современные» шрифты */
   --sans: "Manrope", Arial, sans-serif;
   --wrap: 1180px;
@@ -295,5 +293,5 @@ details p { padding: 0 0 24px; color: var(--muted); max-width: 640px; }
 .format--soon .format__tag { color: #5e5a60; }
 @media (min-width: 1041px) { .format--lead .format__img { flex: 1 1 auto; min-height: 260px; max-height: none; } }
 
-/* Большие заголовки: Circe */
-h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 700; letter-spacing: -.01em; }
+/* Большие заголовки: Jost (Google Fonts, лицензия OFL) */
+h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 600; letter-spacing: -.01em; }
