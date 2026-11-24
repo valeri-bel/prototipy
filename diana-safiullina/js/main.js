@@ -99,6 +99,28 @@
     });
   }
 
+  /* Отзывы: листание стрелками */
+  var track = document.getElementById("reviews");
+  if (track) {
+    var arrows = document.querySelectorAll("[data-slide]");
+    var step = function () {
+      var card = track.querySelector(".review");
+      return card ? card.getBoundingClientRect().width + 24 : track.clientWidth;
+    };
+    var sync = function () {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      arrows.forEach(function (b) {
+        b.disabled = b.dataset.slide === "-1" ? track.scrollLeft <= 2 : track.scrollLeft >= max;
+      });
+    };
+    arrows.forEach(function (b) {
+      b.addEventListener("click", function () { track.scrollBy({ left: step() * Number(b.dataset.slide) }); });
+    });
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+  }
+
   /* Появление блоков при прокрутке */
   var items = document.querySelectorAll(".reveal");
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
