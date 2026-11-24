@@ -102,6 +102,7 @@
   /* Появление блоков при прокрутке */
   var items = document.querySelectorAll(".reveal");
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (calm) document.querySelectorAll(".release svg").forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
   if (calm || !("IntersectionObserver" in window)) {
     items.forEach(function (el) { el.classList.add("is-in"); });
   } else {

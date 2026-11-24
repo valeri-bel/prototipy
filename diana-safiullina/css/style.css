@@ -304,3 +304,9 @@ h1, h2, .format--lead h3 { font-family: var(--display); font-weight: 600; letter
 .slot__state { width: 11.5rem; text-align: center; padding: 9px 13px; }
 @media (max-width: 680px) { .slot__state { width: 10.5rem; } }
 .format__ask { font-size: 15px; color: var(--on-night-muted); }
+
+/* Блок «Метод»: анимация «зажим и отпускание» вместо фото с сессии */
+.release { position: relative; margin: 0 0 56px; border-radius: 14px; overflow: hidden; background: radial-gradient(ellipse at 50% 55%, #1c2640 0%, var(--night) 70%); }
+.release svg { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 380; }
+.release figcaption { position: absolute; left: 28px; right: 28px; bottom: 20px; font-size: 14px; color: var(--on-night-muted); }
+@media (max-width: 680px) { .release svg { aspect-ratio: 4 / 3; } .release figcaption { position: static; padding: 0 20px 18px; } }
